@@ -81,6 +81,7 @@
   .lb-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.12);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:30px;line-height:1;cursor:pointer}
   .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:30px;cursor:pointer}
   .lb-prev{left:12px} .lb-next{right:12px}
+  .lb-leg{position:absolute;left:16px;right:16px;bottom:18px;text-align:center;color:#fff;font-size:15px;line-height:1.4;text-shadow:0 1px 4px #000;pointer-events:none}
 
   /* rodapé */
   footer{background:#0B0B0B;color:var(--muted);padding:26px 16px 22px;margin-top:30px;border-top:1px solid var(--line)}
@@ -145,6 +146,7 @@
   <button class="lb-nav lb-prev" aria-label="Foto anterior">‹</button>
   <img id="lb-img" alt="">
   <button class="lb-nav lb-next" aria-label="Próxima foto">›</button>
+  <div class="lb-leg" id="lb-leg"></div>
 </div>
 
 <script>
@@ -188,7 +190,7 @@ const duvida = p => `Oi! Tenho uma dúvida sobre o *${p.nome}* que vi no site da
 const TOP = "Oi! Vim pelo site da Multifix e quero ver o que está disponível.";
 
 let catAtual = "Todos", busca = "";
-let gFotos = [], gIdx = 0;
+let gFotos = [], gIdx = 0, gLeg = [];
 
 // ---------- planilha ----------
 const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").trim();
@@ -219,6 +221,13 @@ function parseCSV(text){
   return rows;
 }
 
+function linkFoto(f){
+  // aceita: nome do arquivo na pasta fotos, link direto, ou link de compartilhamento do Google Drive
+  const drive = f.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=view&)?id=)([\w-]+)/);
+  if (drive) return "https://drive.google.com/uc?export=view&id=" + drive[1];
+  return f.startsWith("http") ? f : "fotos/" + f;
+}
+
 async function carregarPlanilha(){
   if (!PLANILHA_CSV) return;
   try{
@@ -238,8 +247,8 @@ async function carregarPlanilha(){
         antigo: parsePreco(o["preco antigo"]) || null,
         status: o["status"] || "Disponível",
         estoque: parseInt(o["estoque"]) || null,
-        fotos: ["foto 1","foto 2","foto 3"].map(k => o[k]).filter(Boolean)
-                 .map(f => f.startsWith("http") ? f : "fotos/" + f),
+        fotos: ["foto 1","foto 2","foto 3"].map(k => o[k]).filter(Boolean).map(linkFoto),
+        legendas: ["legenda foto 1","legenda foto 2","legenda foto 3"].map(k => o[k] || ""),
         desc: o["descricao"] || ""
       };
     }).filter(Boolean);
@@ -316,7 +325,7 @@ function detalhe(id){
   const p = PRODUTOS.find(x => x.id === id);
   if (!p || p.status === "Oculto") return vitrine();
   const ok = p.status === "Disponível";
-  gFotos = p.fotos.slice(); gIdx = 0;
+  gFotos = p.fotos.slice(); gIdx = 0; gLeg = (p.legendas || []).slice();
 
   const galeria = gFotos.length
     ? `<div class="main-wrap">
@@ -372,6 +381,8 @@ let lbOn = false, lbSwiped = false;
 
 function lbDraw(){
   lbImg.src = gFotos[gIdx];
+  const leg = document.getElementById("lb-leg");
+  if (leg) leg.textContent = gLeg[gIdx] || "";
   lb.querySelectorAll(".lb-nav").forEach(b => b.style.display = gFotos.length > 1 ? "" : "none");
 }
 function abrirFoto(){
