@@ -111,7 +111,7 @@
 
 <div class="trust">Entrega em Teresina e Timon</div>
 
-<div class="wrap" style="padding-bottom:0"><img class="banner" src="banner.png" alt="Você testa na hora. Paga na entrega."></div>
+<div class="wrap" id="topo-banner" style="padding-bottom:0"><img class="banner" src="banner.png" alt="Você testa na hora. Paga na entrega."></div>
 <main class="wrap" id="app"></main>
 
 <footer>
@@ -460,6 +460,8 @@ function ir(id){
 }
 function rota(){
   ordemVisita = null;
+  const tb = document.getElementById("topo-banner");
+  if (tb) tb.style.display = location.hash.startsWith("#produto=") ? "none" : "block";
   const h = location.hash.replace("#", "");
   if (h.startsWith("produto=")) detalhe(parseInt(h.split("=")[1]));
   else vitrine();
