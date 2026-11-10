@@ -25,9 +25,11 @@
   html{background:var(--bg)}
   body{font-family:var(--font);background:var(--bg);color:var(--text);padding-bottom:52px;min-height:100vh}
   header{background:#0B0B0B;padding:12px 16px;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+  @media(max-width:420px){header{padding:10px 12px}}
   .top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1100px;margin:0 auto}
-  .logo{height:44px;cursor:pointer;display:block}
-  .btn-top{background:var(--gold);color:#121212;text-decoration:none;font-weight:700;font-size:14px;padding:9px 14px;border-radius:8px;white-space:nowrap}
+  .logo{height:44px;cursor:pointer;display:block;flex-shrink:1;min-width:0;width:auto;max-width:100%}
+  .btn-top{background:var(--gold);color:#121212;text-decoration:none;font-weight:700;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap;flex-shrink:0}
+  @media(max-width:420px){.logo{height:34px}.btn-top{font-size:12px;padding:8px 9px}}
   .trust{text-align:center;font-weight:600;font-size:14px;letter-spacing:.2px;color:var(--gold);padding:10px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
   .wrap{max-width:1100px;margin:0 auto;padding:14px}
   .search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-family:var(--font);font-size:15px;margin-bottom:12px;background:var(--panel);color:var(--text)}
@@ -155,7 +157,7 @@ const WA = "5586998164120";
 
 // Link CSV da planilha publicada no Google Sheets.
 // Enquanto estiver vazio, o site usa a lista interna abaixo.
-const PLANILHA_CSV = ""; // TESTE: sem planilha ligada ainda (usa a lista interna)
+const PLANILHA_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRlm6Hr-QgjylLgTjH7OktcQE00xF_btTxdhUckImu5N3AWezeALOGIyM9l_tV21w/pub?gid=1909977994&single=true&output=csv";
 
 // ===== LISTA INTERNA (usada se a planilha não estiver conectada) =====
 // status: "Disponível" | "Esgotado" | "Oculto"
