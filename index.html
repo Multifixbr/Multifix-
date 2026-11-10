@@ -25,9 +25,11 @@
   html{background:var(--bg)}
   body{font-family:var(--font);background:var(--bg);color:var(--text);padding-bottom:52px;min-height:100vh}
   header{background:#0B0B0B;padding:12px 16px;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+  @media(max-width:420px){header{padding:10px 12px}}
   .top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1100px;margin:0 auto}
-  .logo{height:44px;cursor:pointer;display:block}
-  .btn-top{background:var(--gold);color:#121212;text-decoration:none;font-weight:700;font-size:14px;padding:9px 14px;border-radius:8px;white-space:nowrap}
+  .logo{height:44px;cursor:pointer;display:block;flex-shrink:1;min-width:0;width:auto;max-width:100%}
+  .btn-top{background:var(--gold);color:#121212;text-decoration:none;font-weight:700;font-size:14px;padding:9px 12px;border-radius:8px;white-space:nowrap;flex-shrink:0}
+  @media(max-width:420px){.logo{height:34px}.btn-top{font-size:12px;padding:8px 9px}}
   .trust{text-align:center;font-weight:600;font-size:14px;letter-spacing:.2px;color:var(--gold);padding:10px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
   .wrap{max-width:1100px;margin:0 auto;padding:14px}
   .search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-family:var(--font);font-size:15px;margin-bottom:12px;background:var(--panel);color:var(--text)}
@@ -35,14 +37,15 @@
   .filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}
   .chip{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:20px;padding:7px 14px;font-family:var(--font);font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
   .chip.on{background:var(--gold);color:#121212;border-color:var(--gold);font-weight:700}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:14px}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
   .card .img{aspect-ratio:1/1;background:var(--panel2);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden}
   .card .img img{width:100%;height:100%;object-fit:cover}
   .ph{color:var(--muted);font-size:13px;text-align:center;padding:10px}
   .card .info{padding:10px 12px 12px;display:flex;flex-direction:column;flex:1}
-  .card .name{font-weight:600;font-size:15px;line-height:1.35;min-height:40px;cursor:pointer;color:var(--text)}
+  .card .name{font-weight:600;font-size:15px;line-height:1.35;cursor:pointer;color:var(--text);margin-bottom:6px}
   .preco-linha{display:flex;align-items:center;gap:8px;min-height:20px;margin-top:6px}
   .old{color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:500}
   .pct{color:var(--red);font-weight:800;font-size:14px}
@@ -283,17 +286,47 @@ function cardHTML(p){
       <div class="name" onclick="ir(${p.id})">${p.nome}</div>
       ${precoHTML(p, false)}
       ${ok
-        ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora</a>`
+        ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener" onclick="registrarClique(${p.id})">Comprar agora</a>`
         : `<span class="btn off">Esgotado</span>`}
     </div>
   </div>`;
 }
 
+// ----- ordem da vitrine: muda a cada visita, mas quem navega por um assunto vê mais dele -----
+// Cada produto aberto ou comprado soma 3 pontos; cada categoria aberta soma 1 ponto.
+// Na hora de montar a vitrine entra um sorteio, então a ordem nunca fica igual de uma visita para outra.
+let ordemVisita = null;
+
+function lerContagem(chave){
+  try { return JSON.parse(localStorage.getItem(chave) || "{}"); } catch(e){ return {}; }
+}
+function registrarClique(id){
+  try {
+    const p = PRODUTOS.find(x => x.id === id);
+    const prods = lerContagem("mf_cliques"), cats = lerContagem("mf_cats");
+    prods[id] = (prods[id] || 0) + 1;
+    if (p) cats[p.cat] = (cats[p.cat] || 0) + 1;
+    localStorage.setItem("mf_cliques", JSON.stringify(prods));
+    localStorage.setItem("mf_cats", JSON.stringify(cats));
+  } catch(e){}
+  ordemVisita = null; // a próxima vitrine já considera este clique
+}
+function ordenar(lista){
+  if (!ordemVisita){
+    const prods = lerContagem("mf_cliques"), cats = lerContagem("mf_cats");
+    ordemVisita = {};
+    PRODUTOS.forEach(p => {
+      ordemVisita[p.id] = (prods[p.id] || 0) * 3 + (cats[p.cat] || 0) + Math.random() * 2;
+    });
+  }
+  return lista.slice().sort((a, b) => (ordemVisita[b.id] || 0) - (ordemVisita[a.id] || 0));
+}
+
 function vitrine(){
-  const lista = visiveis().filter(p =>
+  const lista = ordenar(visiveis().filter(p =>
     (catAtual === "Todos" || p.cat === catAtual) &&
     p.nome.toLowerCase().includes(busca.toLowerCase())
-  );
+  ));
   const chips = CATS.map(c =>
     `<button class="chip ${c === catAtual ? "on" : ""}" onclick="filtrar('${c}')">${c}</button>`).join("");
   document.getElementById("app").innerHTML = `
@@ -308,9 +341,8 @@ function filtrar(c){ catAtual = c; vitrine(); }
 
 // ---------- produto ----------
 function relacionados(p){
-  const sh = a => a.sort(() => Math.random() - 0.5);
-  const base = visiveis().filter(x => x.id !== p.id);
-  return [...sh(base.filter(x => x.cat === p.cat)), ...sh(base.filter(x => x.cat !== p.cat))].slice(0, 3);
+  const base = ordenar(visiveis().filter(x => x.id !== p.id));
+  return [...base.filter(x => x.cat === p.cat), ...base.filter(x => x.cat !== p.cat)].slice(0, 3);
 }
 
 function mostrarFoto(i){
@@ -325,6 +357,7 @@ function detalhe(id){
   const p = PRODUTOS.find(x => x.id === id);
   if (!p || p.status === "Oculto") return vitrine();
   const ok = p.status === "Disponível";
+  registrarClique(id);
   gFotos = p.fotos.slice(); gIdx = 0; gLeg = (p.legendas || []).slice();
 
   const galeria = gFotos.length
@@ -424,6 +457,7 @@ function ir(id){
   location.hash = id ? "produto=" + id : "";
 }
 function rota(){
+  ordemVisita = null;
   const h = location.hash.replace("#", "");
   if (h.startsWith("produto=")) detalhe(parseInt(h.split("=")[1]));
   else vitrine();
