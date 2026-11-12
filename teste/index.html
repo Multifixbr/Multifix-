@@ -59,7 +59,9 @@
   .tag.no{background:rgba(255,90,90,.15);color:#FF7A7A}
   .tag.nov{background:var(--gold);color:#121212}
   .card .img{position:relative}
-  .badge-nov{position:absolute;top:10px;right:10px;background:var(--gold);color:#121212;font-size:12px;font-weight:800;padding:5px 9px;border-radius:6px;letter-spacing:.3px;z-index:1;pointer-events:none}
+  .ribbon{position:absolute;top:22px;right:-44px;width:170px;transform:rotate(45deg);text-align:center;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:4px 0;background:var(--gold);color:#121212;z-index:1;pointer-events:none;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+  .ribbon.unico{background:#121212;color:var(--gold);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  .ribbon.ultimas{background:#FF4D4D;color:#fff}
   .empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
 
   /* detalhe */
@@ -262,7 +264,7 @@ async function carregarPlanilha(){
         antigo: parsePreco(o["preco antigo"]) || null,
         status: o["status"] || "Disponível",
         estoque: parseInt(o["estoque"]) || null,
-        destaque: norm(o["destaque"] || "").replace(/\s/g, ""),
+        oferta: normOferta(o["oferta"]),
         fotos: ["foto 1","foto 2","foto 3"].map(k => o[k]).filter(Boolean).map(linkFoto),
         legendas: ["legenda foto 1","legenda foto 2","legenda foto 3"].map(k => o[k] || ""),
         desc: o["descricao"] || ""
@@ -285,11 +287,20 @@ function precoHTML(p, grande){
   return linha + `<div class="${grande ? "det-price" : "price"}">${money(p.preco)}</div>`;
 }
 
+function normOferta(v){
+  const n = norm(v || "").replace(/\s/g, "");
+  if (n === "novidade") return "novidade";
+  if (n === "unico") return "unico";
+  if (n === "ultimasunidades") return "ultimas";
+  return "";
+}
+const TEXTO_OFERTA = {novidade:"Novidade", unico:"Único", ultimas:"Últimas unidades"};
 function destaqueTag(p){
-  return p.destaque === "novidade" ? '<span class="tag nov">Novidade</span>' : "";
+  return p.oferta ? `<span class="tag nov">${TEXTO_OFERTA[p.oferta]}</span>` : "";
 }
 function novBadge(p){
-  return p.destaque === "novidade" ? '<span class="badge-nov">Novidade</span>' : "";
+  const curto = {novidade:"Novidade", unico:"Único", ultimas:"Últimas"};
+  return p.oferta ? `<span class="ribbon ${p.oferta}">${curto[p.oferta]}</span>` : "";
 }
 
 function cardHTML(p){
