@@ -58,7 +58,8 @@
   .tag.ok{background:rgba(37,211,102,.15);color:#4ADE80}
   .tag.no{background:rgba(255,90,90,.15);color:#FF7A7A}
   .tag.nov{background:var(--gold);color:#121212}
-  .tag.uni{background:#fff;color:#121212}
+  .card .img{position:relative}
+  .badge-nov{position:absolute;top:10px;right:10px;background:var(--gold);color:#121212;font-size:12px;font-weight:800;padding:5px 9px;border-radius:6px;letter-spacing:.3px;z-index:1;pointer-events:none}
   .empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
 
   /* detalhe */
@@ -100,7 +101,6 @@
   .pay-item svg{width:32px;height:32px;flex-shrink:0;color:var(--text)}
   .loc{max-width:1100px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 
-  .wafloat{position:fixed;left:0;right:0;bottom:0;background:var(--wa);text-align:center;padding:9px 12px;color:#fff;font-weight:700;text-decoration:none;font-size:13px;z-index:20}
 </style>
 </head>
 <body>
@@ -155,7 +155,6 @@
   <p class="loc">Estamos localizados na Zona Sudeste de Teresina.</p>
 </footer>
 
-<a class="wafloat" id="wa-float" href="#" target="_blank" rel="noopener">Atendimento pelo WhatsApp</a>
 
 <div class="lb" id="lb">
   <button class="lb-x" aria-label="Fechar">×</button>
@@ -193,7 +192,7 @@ let PRODUTOS = [
   {id:16,nome:"Chaleira Inox",cat:"Utilidades",preco:70,status:"Disponível",estoque:null,fotos:["fotos/chaleira-1.jpg","fotos/chaleira-2.jpg"],desc:"Chaleira elétrica em inox de 1,8 litro, com desligamento automático de segurança e indicador luminoso."},
   {id:17,nome:"Torneira de Parede",cat:"Utilidades",preco:40,status:"Disponível",estoque:null,fotos:["fotos/torneira-1.jpg","fotos/torneira-2.jpg"],desc:"Torneira de parede flexível com duplo jato (concentrado e chuveirinho). Alcança cantos difíceis da cuba e ajuda a economizar água."}
 ];
-const CATS = ["Todos","Novidades","Único","Ferramentas","Acessórios","Eletrônicos","Utilidades"];
+const CATS = ["Todos","Ferramentas","Acessórios","Eletrônicos","Utilidades"];
 const GARANTIA = "Garantia de 7 dias. Se tiver qualquer problema, fale com a gente pelo WhatsApp.";
 // ======================================================================
 
@@ -278,7 +277,6 @@ async function carregarPlanilha(){
 // ---------- vitrine ----------
 function setWa(){
   document.getElementById("wa-top").href = waLink(TOP);
-  document.getElementById("wa-float").href = waLink(TOP);
 }
 
 function precoHTML(p, grande){
@@ -288,15 +286,10 @@ function precoHTML(p, grande){
 }
 
 function destaqueTag(p){
-  if (p.destaque === "novidade") return '<span class="tag nov">Novidade</span>';
-  if (p.destaque === "unico") return '<span class="tag uni">Único</span>';
-  return "";
+  return p.destaque === "novidade" ? '<span class="tag nov">Novidade</span>' : "";
 }
-function filtraCat(p){
-  if (catAtual === "Todos") return true;
-  if (catAtual === "Novidades") return p.destaque === "novidade";
-  if (catAtual === "Único") return p.destaque === "unico";
-  return p.cat === catAtual;
+function novBadge(p){
+  return p.destaque === "novidade" ? '<span class="badge-nov">Novidade</span>' : "";
 }
 
 function cardHTML(p){
@@ -306,10 +299,9 @@ function cardHTML(p){
     : `<div class="ph">Foto em breve</div>`;
   return `
   <div class="card">
-    <div class="img" onclick="ir(${p.id})">${img}</div>
+    <div class="img" onclick="ir(${p.id})">${img}${novBadge(p)}</div>
     <div class="info">
       <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
-      ${destaqueTag(p)}
       <div class="name" onclick="ir(${p.id})">${p.nome}</div>
       ${precoHTML(p, false)}
       ${ok
@@ -351,7 +343,7 @@ function ordenar(lista){
 
 function vitrine(){
   const lista = ordenar(visiveis().filter(p =>
-    filtraCat(p) &&
+    (catAtual === "Todos" || p.cat === catAtual) &&
     p.nome.toLowerCase().includes(busca.toLowerCase())
   ));
   const chips = CATS.map(c =>
@@ -369,7 +361,7 @@ function filtrar(c){ catAtual = c; vitrine(); }
 // ---------- produto ----------
 function relacionados(p){
   const base = ordenar(visiveis().filter(x => x.id !== p.id));
-  return [...base.filter(x => x.cat === p.cat), ...base.filter(x => x.cat !== p.cat)].slice(0, 3);
+  return [...base.filter(x => x.cat === p.cat), ...base.filter(x => x.cat !== p.cat)].slice(0, 4);
 }
 
 function mostrarFoto(i){
