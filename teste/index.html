@@ -275,8 +275,11 @@ async function carregarPlanilha(){
         status: o["status"] || "Disponível",
         estoque: parseInt(o["estoque"]) || null,
         oferta: normOferta(o["oferta"]),
-        fotos: ["foto 1","foto 2","foto 3"].map(k => o[k]).filter(Boolean).map(linkFoto),
-        legendas: ["legenda foto 1","legenda foto 2","legenda foto 3"].map(k => o[k] || ""),
+        ...(() => {
+          // até 5 fotos; a legenda de cada foto continua junto dela
+          const pares = [1,2,3,4,5].map(n => [o["foto " + n], o["legenda foto " + n] || ""]).filter(([f]) => f);
+          return { fotos: pares.map(([f]) => linkFoto(f)), legendas: pares.map(([, l]) => l) };
+        })(),
         desc: o["descricao"] || ""
       };
     }).filter(Boolean);
