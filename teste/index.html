@@ -243,7 +243,7 @@ function linkFoto(f){
   // vídeo do Drive (link de visualização) fica como está
   if (/drive\.google\.com\/file\/d\/[\w-]+\/preview/.test(f)) return f;
   // aceita: nome do arquivo na pasta fotos, link direto, ou link de compartilhamento do Google Drive
-  const drive = f.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=view&)?id=)([\w-]+)/);
+  const drive = f.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=view&)?id=|thumbnail\?id=)([\w-]+)/);
   if (drive) return "https://lh3.googleusercontent.com/d/" + drive[1] + "=w1200";
   return f.startsWith("http") ? f : "fotos/" + f;
 }
