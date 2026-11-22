@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:02:27-03:00",
+  "gerado_em": "2026-11-22T14:07:42-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -183,6 +183,34 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140151-4ae575e23b.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-9e89b2a58438",
+      "nome": "JOGO DE PANELAS ANTIADERENTE 10 PEÇAS MARROM",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "02 Panelas\n02 Caçarolas\n02 Frigideiras Fundas\n01 Fervedor\n03 Acessórios em Nylon\n\nDESCRIÇÃO DAS PEÇAS:\n\nPanela – 2 L\nDiâmetro: 18 cm | Altura: 7 cm\nPanela – 1,5 L\nDiâmetro: 16 cm | Altura: 7 cm\nCaçarola – 2,7 L\nDiâmetro: 20 cm | Altura: 8 cm\n\nCaçarola – 2 L\nDiâmetro: 18 cm | Altura: 8 cm\nFrigideira Funda – 1,6 L\nDiâmetro: 20 cm | Altura: 6 cm\nFrigideira Funda – 1,4 L\nDiâmetro: 18 cm | Altura: 6 cm\nFervedor – 2 L\nDiâmetro: 14 cm | Altura: 12 cm\nAcessórios 03 unidades",
+      "oferta": "ultimas",
+      "preco": 260.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-a5eff7bf4b.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-c83e22341f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-bb6a403dcf.jpg",
           "legenda": ""
         }
       ]
