@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:07:42-03:00",
+  "gerado_em": "2026-11-22T14:16:27-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -211,6 +211,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-bb6a403dcf.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-3bff5c95ce17",
+      "nome": "Maleta de ferramentas Com 12 Ferramentas",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "",
+      "oferta": "ultimas",
+      "preco": 60.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-c62f46c9fa.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-7dafaba67f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-5bbee4e2e7.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-f2c6b7e2d0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-e8dab4c493.jpg",
           "legenda": ""
         }
       ]
