@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T13:47:34-03:00",
+  "gerado_em": "2026-11-22T13:48:50-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -47,22 +47,12 @@
       "fotos": [
         {
           "tipo": "imagem",
-          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-f5698795f5.jpg",
-          "legenda": ""
-        },
-        {
-          "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-7d253b8b7e.jpg",
           "legenda": ""
         },
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-e3dd5031cb.jpg",
-          "legenda": ""
-        },
-        {
-          "tipo": "imagem",
-          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-f946c45b56.jpg",
           "legenda": ""
         }
       ]
