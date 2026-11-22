@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T13:59:15-03:00",
+  "gerado_em": "2026-11-22T14:02:27-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -160,6 +160,29 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135800-b496b8010d.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-9eaffc63a5da",
+      "nome": "fone capacete V10",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Fone bluetooth para capacete de moto, com bluetooth 5.3, até 30h de chamadas e alcance de 20m. Compatível com Android e iOS.",
+      "oferta": "ultimas",
+      "preco": 75.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140151-5813e681c6.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140151-4ae575e23b.jpg",
           "legenda": ""
         }
       ]
