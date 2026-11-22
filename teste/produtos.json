@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T13:53:56-03:00",
+  "gerado_em": "2026-11-22T13:57:28-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -114,6 +114,29 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-cf81697ba6.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-b8a776231ad0",
+      "nome": "Compressor de Ar Portátil",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Compressor portátil para calibrar pneus de carro, moto, bicicleta e bolas. Calibragem rápida, sem depender de posto.",
+      "oferta": "",
+      "preco": 90.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135626-8d61b9b2f0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135626-df2ec0fd6b.jpg",
           "legenda": ""
         }
       ]
