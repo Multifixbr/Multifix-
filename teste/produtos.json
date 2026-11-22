@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:24:40-03:00",
+  "gerado_em": "2026-11-22T14:27:46-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -211,6 +211,34 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-bb6a403dcf.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-65b7330adf0e",
+      "nome": "Kit de Ferramentas 46 peças com maleta",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Kit com 46 peças: chave catraca reversível, soquetes, extensões, bits e chaves hexagonais. Para reparos automotivos e manutenção em casa ou na oficina.",
+      "oferta": "",
+      "preco": 60.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-8e42418a7c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-763ea9a12f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-1b3123b9dc.jpg",
           "legenda": ""
         }
       ]
