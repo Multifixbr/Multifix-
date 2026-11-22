@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:37:14-03:00",
+  "gerado_em": "2026-11-22T14:41:42-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -315,6 +315,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-6ab75b301f.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-86500427c49e",
+      "nome": "PARAFUSADEIRA DEASOON",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Parafusadeira e furadeira de impacto sem fio 20V Deasoon com torque máximo de 42 N.m, motor com núcleo de cobre, 18+1 níveis de ajuste de torque e duas velocidades (0–350 rpm e 0–1.350 rpm) para perfurar e parafusar madeira, metal, plástico e cerâmica com precisão. Acompanha 2 baterias recarregáveis de 1.500 mAh, carregador, jogo de brocas e bits, conector extensor, caixa de acessórios e luz LED integrada para iluminação da área de trabalho.",
+      "oferta": "",
+      "preco": 169.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144058-5bf8d8c7fe.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-5269d18efc.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-1536fb849c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-182bd6fca6.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-854fdb6400.jpg",
           "legenda": ""
         }
       ]
