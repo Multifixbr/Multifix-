@@ -1,0 +1,23 @@
+{
+  "gerado_em": "2026-11-22T12:02:29-03:00",
+  "produtos": [
+    {
+      "id": "p-67e7ad20d8e1",
+      "nome": "Caixa de som Bluetooth Portátil 50W",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "",
+      "oferta": "black",
+      "preco": 135.0,
+      "preco_antigo": 150.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/photo-mwqrlivv-jjbiw.jpg",
+          "legenda": ""
+        }
+      ]
+    }
+  ]
+}
