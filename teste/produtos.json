@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:27:46-03:00",
+  "gerado_em": "2026-11-22T14:37:14-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -277,6 +277,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-e8dab4c493.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-0fc7ea49895e",
+      "nome": "PARAFUSADEIRA 48V + 2 BATERIAS",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Parafusadeira e furadeira sem fio 48V com potência de 340W, torque máximo de 35Nm, duas velocidades de rotação (0–650 rpm / 0–1400 rpm), mandril de aperto rápido de 10 mm e iluminação LED frontal embutida. Acompanha 2 baterias 48V de longa duração, carregador bivolt (127/220V), bits fenda e philips, brocas para aço e madeira, soquetes, prolongador flexível e maleta rígida organizadora.",
+      "oferta": "",
+      "preco": 169.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143628-7fda8ef1f0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-48e7356976.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-d2e1514992.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-74a83271e8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-6ab75b301f.jpg",
           "legenda": ""
         }
       ]
