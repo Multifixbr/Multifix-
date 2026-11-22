@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:45:13-03:00",
+  "gerado_em": "2026-11-22T14:49:08-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -216,6 +216,34 @@
       ]
     },
     {
+      "id": "p-667a96e6e4a4",
+      "nome": "Kit 300 Peças Parafusos e Buchas",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "O que vem no estojo (300 peças separadas por medida):\n\nParafusos 3,5 x 12 mm: 50 unidades\nParafusos 3,5 x 16 mm: 40 unidades\nParafusos 3,5 x 20 mm: 30 unidades\nParafusos 3,5 x 25 mm: 20 unidades\nParafusos 3,5 x 35 mm: 20 unidades\nParafusos 4,0 x 40 mm: 20 unidades\nParafusos 4,0 x 50 mm: 20 unidades\nBuchas de Parede 06 mm: 80 unidades\nBuchas de Parede 08 mm: 20 unidades",
+      "oferta": "",
+      "preco": 40.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-1b691f81eb.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-c245027057.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-ce419f022d.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
       "id": "p-65b7330adf0e",
       "nome": "Kit de Ferramentas 46 peças com maleta",
       "categoria": "Ferramentas",
@@ -353,6 +381,29 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-854fdb6400.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-bfc4adb6f120",
+      "nome": "RADIO MP3 FIRST",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Som Automotivo MP3 First Option padrão universal 1 Din (11 cm de profundidade) com Bluetooth integrado para músicas e chamadas viva-voz, entrada USB frontal, leitor de cartão SD, entrada auxiliar P2 e Rádio FM com 18 memórias. Proporciona áudio limpo sem interferências, painel com visor digital iluminado e acompanha controle remoto, chicote de instalação, 2 chaves de extração e manual.",
+      "oferta": "",
+      "preco": 100.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144805-e7e2b10ab0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144805-e33f9ff676.jpg",
           "legenda": ""
         }
       ]
