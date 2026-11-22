@@ -1,4 +1,38 @@
 {
-  "gerado_em": "2026-11-22T13:41:28-03:00",
-  "produtos": []
+  "gerado_em": "2026-11-22T13:43:34-03:00",
+  "produtos": [
+    {
+      "id": "p-67e7ad20d8e1",
+      "nome": "Caixa de som Bluetooth Portátil 50W",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Caixa de som multimídia Xtrad CS-29, sem fio, com LED RGB, bluetooth, TWS, entrada USB, cartão TF e rádio FM. Potência de 50W.",
+      "oferta": "black",
+      "preco": 135.0,
+      "preco_antigo": 150.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/photo-mwqrlivv-jjbiw.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-713a56519f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-38228aded7.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-ef9576455a.jpg",
+          "legenda": ""
+        }
+      ]
+    }
+  ]
 }
