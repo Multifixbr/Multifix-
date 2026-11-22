@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:41:42-03:00",
+  "gerado_em": "2026-11-22T14:45:13-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -419,6 +419,57 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-57ba524c92.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-1a7e71f06908",
+      "nome": "Torneira de Parede",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Torneira de parede flexível com duplo jato (concentrado e chuveirinho). Alcança cantos difíceis da cuba e ajuda a economizar água.",
+      "oferta": "ultimas",
+      "preco": 40.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-fefb49ab38.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-3436df8322.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-77d8e66f93.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-7d4fcc3bab95",
+      "nome": "UGREEN - Cartão Rastreador",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Rastreador inteligente Bluetooth UGREEN FineTrack Duo (modelo CM916) com certificação dupla nativa para Apple Find My (iOS 14.5+) e Google Find Hub (Android), permitindo localizar chaves, mochilas, malas de viagem, bicicletas e veículos em tempo real sem mensalidade e sem chip. Equipado com bateria interna recarregável via USB Tipo-C com autonomia de até 365 dias por carga, alarme sonoro de alta",
+      "oferta": "ultimas",
+      "preco": 100.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144408-6ee539fb7e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144408-e0979b8316.jpg",
           "legenda": ""
         }
       ]
