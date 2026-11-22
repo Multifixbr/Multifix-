@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:16:27-03:00",
+  "gerado_em": "2026-11-22T14:18:30-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -249,6 +249,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-e8dab4c493.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-1d1962cac7dc",
+      "nome": "Relogio com Gps+strava+Alexa",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Ideal para corridas e treinos com GPS integrado Possui resistência à água 3ATM, Alexa integrada e faz/recebe chamadas direto no pulso. Monitora batimentos, oxigênio no sangue e sono em uma tela grande de 1.85\" com mais de 100 modos esportivos. Bateria de longa duração para até 7 dias de uso.",
+      "oferta": "black",
+      "preco": 245.0,
+      "preco_antigo": 260.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-30cc0e3457.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-fd7de9ada8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-634112842c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-639f50ff76.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141746-a398eedaa5.jpg",
           "legenda": ""
         }
       ]
