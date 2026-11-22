@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T13:57:28-03:00",
+  "gerado_em": "2026-11-22T13:58:37-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -137,6 +137,29 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135626-df2ec0fd6b.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-cd9e7509cdda",
+      "nome": "Controle de PS4 e PC",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Controle sem fio no estilo DualShock 4, compatível com PS4 e PC.",
+      "oferta": "black",
+      "preco": 70.0,
+      "preco_antigo": 100.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135800-69a4d24457.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135800-b496b8010d.jpg",
           "legenda": ""
         }
       ]
