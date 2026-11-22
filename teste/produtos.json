@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-22T14:18:30-03:00",
+  "gerado_em": "2026-11-22T14:21:14-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -287,6 +287,34 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141746-a398eedaa5.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-d616af2804e8",
+      "nome": "Relógio Masculino VA VA VOOM",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Relógio masculino elegante, resistente a água e com calendário. Estilo executivo para ocasiões sociais e reuniões.",
+      "oferta": "ultimas",
+      "preco": 140.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-5847ccde8d.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-1dd3ace7fd.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-57ba524c92.jpg",
           "legenda": ""
         }
       ]
