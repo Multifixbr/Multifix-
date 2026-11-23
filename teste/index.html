@@ -65,6 +65,33 @@
   .ribbon.black{background:#121212;color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
   .empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
 
+  /* layout B: destaque de oferta */
+  .hero-b{background:linear-gradient(120deg,#000 0%,#1c1500 60%,#3a2c00 100%);border:1px solid #3a2c00;border-radius:12px;padding:20px;margin-bottom:12px}
+  .hero-b small{color:var(--gold);font-weight:800;letter-spacing:1px;font-size:12px}
+  .hero-b h2{font-size:22px;margin:4px 0 4px}
+  .hero-b p{font-size:14px;color:#d8d8d8;line-height:1.5}
+  .card.feat{grid-column:1/-1;flex-direction:row}
+  .card.feat .img{flex:0 0 50%;aspect-ratio:auto;min-height:280px}
+  .card.feat .info{padding:22px;justify-content:center}
+  .card.feat .name{font-size:22px;min-height:0}
+  .card.feat .price{font-size:30px}
+  @media(max-width:640px){.card.feat{flex-direction:column}.card.feat .img{flex:none;min-height:0;aspect-ratio:1/1}}
+
+  /* layout C: lista */
+  .grid.lista{grid-template-columns:1fr;max-width:760px;margin:0 auto;gap:12px}
+  @media(min-width:800px){.grid.lista{grid-template-columns:1fr}}
+  .card.linha{flex-direction:row}
+  .card.linha .img{flex:0 0 104px;width:104px;height:104px;aspect-ratio:auto}
+  .card.linha .info{padding:10px 12px;min-width:0}
+  .card.linha .linha-top{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .card.linha .name{min-height:0;font-size:15px;margin-bottom:2px}
+  .card.linha .price{font-size:19px;margin:0 0 8px}
+  .card.linha .btn{padding:10px}
+  .card.linha .tag{margin-bottom:4px}
+  .card.linha .ribbon{display:none}
+  .layout-teste{max-width:1100px;margin:14px auto 0;text-align:center;font-size:13px;color:var(--muted)}
+  .layout-teste a{color:var(--gold);font-weight:700;margin:0 4px}
+
   /* detalhe */
   .detail{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:20px}
   @media(min-width:800px){.detail{grid-template-columns:1fr 1fr;padding:24px}}
@@ -154,6 +181,7 @@
       </ol>
     </div>
   </div>
+  <p class="layout-teste">Layout de teste: <a href="?layout=a">A</a> <a href="?layout=b">B</a> <a href="?layout=c">C</a></p>
   <p class="loc">Estamos localizados na Zona Sudeste de Teresina.</p>
 </footer>
 
@@ -359,13 +387,30 @@ function novBadge(p){
   return p.oferta ? `<span class="ribbon ${p.oferta}">${curto[p.oferta]}</span>` : "";
 }
 
-function cardHTML(p){
+// Layout de teste: ?layout=a (grade), b (destaque de oferta), c (lista)
+const LAYOUT = (["a","b","c"].includes(new URLSearchParams(location.search).get("layout")) ? new URLSearchParams(location.search).get("layout") : "a");
+
+function cardHTML(p, feat){
   const ok = p.status === "Disponível";
   const img = p.fotos.length
     ? midia(p.fotos[0], p.nome)
     : `<div class="ph">Foto em breve</div>`;
+  if (LAYOUT === "c"){
+    return `
+  <div class="card linha">
+    <div class="img" onclick="ir(${p.id})">${img}</div>
+    <div class="info">
+      <div class="linha-top"><span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>${destaqueTag(p)}</div>
+      <div class="name" onclick="ir(${p.id})">${p.nome}</div>
+      ${precoHTML(p, false)}
+      ${ok
+        ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener" onclick="registrarClique(${p.id})">Comprar</a>`
+        : `<span class="btn off">Esgotado</span>`}
+    </div>
+  </div>`;
+  }
   return `
-  <div class="card">
+  <div class="card${feat ? " feat" : ""}">
     <div class="img" onclick="ir(${p.id})">${img}${novBadge(p)}</div>
     <div class="info">
       <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
@@ -416,10 +461,15 @@ function vitrine(){
   ));
   const chips = CATS.map(c =>
     `<button class="chip ${c === catAtual ? "on" : ""}" onclick="filtrar('${c}')">${c}</button>`).join("");
+  const destaque = LAYOUT === "b" && catAtual === "Todos" && !q && lista.length;
+  const hero = destaque ? `
+    <div class="hero-b"><small>BLACK FRIDAY</small><h2>Ofertas de pronta entrega</h2><p>Preço especial enquanto durar a promoção. Garanta o seu.</p></div>` : "";
+  const cards = lista.map((p, i) => cardHTML(p, destaque && i === 0)).join("");
   document.getElementById("app").innerHTML = `
     <input class="search" placeholder="Buscar produto..." value="${busca}" oninput="busca=this.value;vitrine()">
     <div class="filters">${chips}</div>
-    <div class="grid">${lista.length ? lista.map(cardHTML).join("") : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
+    ${hero}
+    <div class="grid${LAYOUT === "c" ? " lista" : ""}">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
   const inp = document.querySelector(".search");
   if (busca && inp){ inp.focus(); inp.setSelectionRange(busca.length, busca.length); }
 }
@@ -483,7 +533,7 @@ function detalhe(id){
         </div>
       </div>
     </div>
-    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(cardHTML).join("")}</div>` : ""}`;
+    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid${LAYOUT === "c" ? " lista" : ""}">${rel.map(p => cardHTML(p)).join("")}</div>` : ""}`;
 
   const mw = document.getElementById("main-wrap");
   if (mw && gFotos.length > 1) swipe(mw, dir => mostrarFoto(gIdx + dir));
