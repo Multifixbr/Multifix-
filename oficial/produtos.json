@@ -1,0 +1,529 @@
+{
+  "gerado_em": "2026-11-23T09:28:14-03:00",
+  "produtos": [
+    {
+      "id": "p-67e7ad20d8e1",
+      "nome": "Caixa de som Bluetooth Portátil 50W",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Caixa de som multimídia Xtrad CS-29, sem fio, com LED RGB, bluetooth, TWS, entrada USB, cartão TF e rádio FM. Potência de 50W.",
+      "oferta": "black",
+      "preco": 135.0,
+      "preco_antigo": 150.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/photo-mwqrlivv-jjbiw.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-713a56519f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-38228aded7.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134114-ef9576455a.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-d3ae639b5f5f",
+      "nome": "Carregador de Bateria 12 V",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Carregador inteligente 12V para baterias de carro, moto e utilitários (4Ah a 100Ah). Bivolt, com display digital e proteção contra curto-circuito, polaridade invertida e sobrecarga.",
+      "oferta": "",
+      "preco": 100.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-7d253b8b7e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122134658-e3dd5031cb.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-c713280a1de0",
+      "nome": "Carregador Rápido 50W",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "✅ Ativa o Modo Carregamento Rápido (50W)",
+      "oferta": "ultimas",
+      "preco": 50.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135108-a15208d079.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135108-f07d44e2a5.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-c03533c61f66",
+      "nome": "CHAVE DE IMPACTO 580 NM",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Chave de Impacto Sem Fio Rhovixstar 68VF  entrega força bruta de 580 N.m com encaixe quadrado reforçado de 1/2\" com pino de travamento, soltando porcas e parafusos de rodas de carros, motos e estruturas travadas em segundos.\n-\n✅ Ferramenta 2 em 1 (Impacto + Furadeira/Parafusadeira)\n✅ Painel Digital e Iluminação LED Integrada  \n✅ Maleta Completa Pronta para Uso: Inclui soquetes longos de impacto para rodas, pontas bits (Phillips/Fenda), pino de trava, anel de vedação e fonte bivolt",
+      "oferta": "",
+      "preco": 245.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-216c75a1a8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-3edd6ec9fb.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-5ec99c3f0e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-bb10fc7ec2.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-cf81697ba6.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-b8a776231ad0",
+      "nome": "Compressor de Ar Portátil",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Compressor portátil para calibrar pneus de carro, moto, bicicleta e bolas. Calibragem rápida, sem depender de posto.",
+      "oferta": "",
+      "preco": 90.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135626-8d61b9b2f0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135626-df2ec0fd6b.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-cd9e7509cdda",
+      "nome": "Controle de PS4 e PC",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Controle sem fio no estilo DualShock 4, compatível com PS4 e PC.",
+      "oferta": "black",
+      "preco": 70.0,
+      "preco_antigo": 100.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135800-69a4d24457.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135800-b496b8010d.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-9eaffc63a5da",
+      "nome": "fone capacete V10",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Fone bluetooth para capacete de moto, com bluetooth 5.3, até 30h de chamadas e alcance de 20m. Compatível com Android e iOS.",
+      "oferta": "ultimas",
+      "preco": 75.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140151-5813e681c6.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140151-4ae575e23b.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-9e89b2a58438",
+      "nome": "JOGO DE PANELAS ANTIADERENTE 10 PEÇAS MARROM",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "02 Panelas\n02 Caçarolas\n02 Frigideiras Fundas\n01 Fervedor\n03 Acessórios em Nylon\n\nDESCRIÇÃO DAS PEÇAS:\n\nPanela – 2 L\nDiâmetro: 18 cm | Altura: 7 cm\nPanela – 1,5 L\nDiâmetro: 16 cm | Altura: 7 cm\nCaçarola – 2,7 L\nDiâmetro: 20 cm | Altura: 8 cm\n\nCaçarola – 2 L\nDiâmetro: 18 cm | Altura: 8 cm\nFrigideira Funda – 1,6 L\nDiâmetro: 20 cm | Altura: 6 cm\nFrigideira Funda – 1,4 L\nDiâmetro: 18 cm | Altura: 6 cm\nFervedor – 2 L\nDiâmetro: 14 cm | Altura: 12 cm\nAcessórios 03 unidades",
+      "oferta": "ultimas",
+      "preco": 260.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-a5eff7bf4b.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-c83e22341f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122140704-bb6a403dcf.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-667a96e6e4a4",
+      "nome": "Kit 300 Peças Parafusos e Buchas",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "O que vem no estojo (300 peças separadas por medida):\n\nParafusos 3,5 x 12 mm: 50 unidades\nParafusos 3,5 x 16 mm: 40 unidades\nParafusos 3,5 x 20 mm: 30 unidades\nParafusos 3,5 x 25 mm: 20 unidades\nParafusos 3,5 x 35 mm: 20 unidades\nParafusos 4,0 x 40 mm: 20 unidades\nParafusos 4,0 x 50 mm: 20 unidades\nBuchas de Parede 06 mm: 80 unidades\nBuchas de Parede 08 mm: 20 unidades",
+      "oferta": "",
+      "preco": 40.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-1b691f81eb.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-c245027057.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141137-ce419f022d.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-65b7330adf0e",
+      "nome": "Kit de Ferramentas 46 peças com maleta",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Kit com 46 peças: chave catraca reversível, soquetes, extensões, bits e chaves hexagonais. Para reparos automotivos e manutenção em casa ou na oficina.",
+      "oferta": "",
+      "preco": 60.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-8e42418a7c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-763ea9a12f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142707-1b3123b9dc.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-3bff5c95ce17",
+      "nome": "Maleta de ferramentas Com 12 Ferramentas",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "",
+      "oferta": "ultimas",
+      "preco": 60.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-c62f46c9fa.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-7dafaba67f.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-5bbee4e2e7.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-f2c6b7e2d0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141543-e8dab4c493.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-0fc7ea49895e",
+      "nome": "PARAFUSADEIRA 48V + 2 BATERIAS",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Parafusadeira e furadeira sem fio 48V com potência de 340W, torque máximo de 35Nm, duas velocidades de rotação (0–650 rpm / 0–1400 rpm), mandril de aperto rápido de 10 mm e iluminação LED frontal embutida. Acompanha 2 baterias 48V de longa duração, carregador bivolt (127/220V), bits fenda e philips, brocas para aço e madeira, soquetes, prolongador flexível e maleta rígida organizadora.",
+      "oferta": "",
+      "preco": 169.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143628-7fda8ef1f0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-48e7356976.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-d2e1514992.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-74a83271e8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122143629-6ab75b301f.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-86500427c49e",
+      "nome": "PARAFUSADEIRA DEASOON",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Parafusadeira e furadeira de impacto sem fio 20V Deasoon com torque máximo de 42 N.m, motor com núcleo de cobre, 18+1 níveis de ajuste de torque e duas velocidades (0–350 rpm e 0–1.350 rpm) para perfurar e parafusar madeira, metal, plástico e cerâmica com precisão. Acompanha 2 baterias recarregáveis de 1.500 mAh, carregador, jogo de brocas e bits, conector extensor, caixa de acessórios e luz LED integrada para iluminação da área de trabalho.",
+      "oferta": "",
+      "preco": 169.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-1536fb849c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-182bd6fca6.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-854fdb6400.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144059-5269d18efc.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144058-5bf8d8c7fe.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-bfc4adb6f120",
+      "nome": "RADIO MP3 FIRST",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Som Automotivo MP3 First Option padrão universal 1 Din (11 cm de profundidade) com Bluetooth integrado para músicas e chamadas viva-voz, entrada USB frontal, leitor de cartão SD, entrada auxiliar P2 e Rádio FM com 18 memórias. Proporciona áudio limpo sem interferências, painel com visor digital iluminado e acompanha controle remoto, chicote de instalação, 2 chaves de extração e manual.",
+      "oferta": "",
+      "preco": 100.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144805-e7e2b10ab0.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144805-e33f9ff676.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-1d1962cac7dc",
+      "nome": "Relogio com Gps+strava+Alexa",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Ideal para corridas e treinos com GPS integrado Possui resistência à água 3ATM, Alexa integrada e faz/recebe chamadas direto no pulso. Monitora batimentos, oxigênio no sangue e sono em uma tela grande de 1.85\" com mais de 100 modos esportivos. Bateria de longa duração para até 7 dias de uso.",
+      "oferta": "black",
+      "preco": 245.0,
+      "preco_antigo": 260.0,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-30cc0e3457.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-fd7de9ada8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-634112842c.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141745-639f50ff76.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122141746-a398eedaa5.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-d616af2804e8",
+      "nome": "Relógio Masculino VA VA VOOM",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Relógio masculino elegante, resistente a água e com calendário. Estilo executivo para ocasiões sociais e reuniões.",
+      "oferta": "ultimas",
+      "preco": 140.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-5847ccde8d.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-1dd3ace7fd.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142036-57ba524c92.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-1a7e71f06908",
+      "nome": "Torneira de Parede",
+      "categoria": "Eletrônicos",
+      "marca": "",
+      "descricao": "Torneira de parede flexível com duplo jato (concentrado e chuveirinho). Alcança cantos difíceis da cuba e ajuda a economizar água.",
+      "oferta": "ultimas",
+      "preco": 40.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-fefb49ab38.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-3436df8322.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122142241-77d8e66f93.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-7d4fcc3bab95",
+      "nome": "UGREEN - Cartão Rastreador",
+      "categoria": "Acessórios",
+      "marca": "",
+      "descricao": "Rastreador inteligente Bluetooth UGREEN FineTrack Duo (modelo CM916) com certificação dupla nativa para Apple Find My (iOS 14.5+) e Google Find Hub (Android), permitindo localizar chaves, mochilas, malas de viagem, bicicletas e veículos em tempo real sem mensalidade e sem chip. Equipado com bateria interna recarregável via USB Tipo-C com autonomia de até 365 dias por carga, alarme sonoro de alta",
+      "oferta": "ultimas",
+      "preco": 100.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144408-6ee539fb7e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122144408-e0979b8316.jpg",
+          "legenda": ""
+        }
+      ]
+    }
+  ]
+}
