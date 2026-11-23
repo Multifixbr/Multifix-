@@ -135,6 +135,43 @@
   .pay-item{display:flex;align-items:center;gap:8px;color:var(--text);font-size:14px;font-weight:500;text-decoration:none}
   .pay-item svg{width:32px;height:32px;flex-shrink:0;color:var(--text)}
   .loc{max-width:1100px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+  /* página do produto (layout novo) */
+  .back{display:inline-block;margin:2px 0 14px;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+  .pd-page{padding-bottom:4px}
+  .pd{display:grid;gap:22px}
+  .pd-gal{min-width:0}
+  .pd-gal img.main{border-radius:14px}
+  .pd-info{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+  .pd-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .pd-info h1{font-size:24px;line-height:1.25;margin:2px 0 0}
+  .pd-preco{display:flex;align-items:center;gap:10px}
+  .pd-preco s{color:var(--muted);font-size:15px}
+  .pd-pct{background:#E11D48;color:#fff;font-weight:800;font-size:13px;padding:3px 8px;border-radius:6px}
+  .pd-valor{font-size:38px;font-weight:800;color:var(--gold);line-height:1}
+  .pd-ben{list-style:none;display:grid;gap:6px;padding:12px 14px;background:var(--panel2);border-radius:10px;font-size:14px;font-weight:600}
+  .pd-ben li::before{content:"✓  ";color:#4ADE80;font-weight:800}
+  .pd-info .desc{margin:4px 0 0;font-size:15px}
+  .pd-info .guar{margin:4px 0 0}
+  .pd-info .acts{margin-top:6px;gap:12px}
+  .pd-info .acts .btn{padding:16px;font-size:17px;border-radius:12px}
+  .pd-info .acts .btn.ghost{padding:14px;font-size:15px}
+  .buy-bar{display:none}
+  @media(min-width:800px){
+    .pd{grid-template-columns:1.05fr 1fr;align-items:start;gap:28px}
+    .pd-gal{position:sticky;top:96px}
+    .pd-info{padding:26px}
+    .pd-info h1{font-size:30px}
+  }
+  @media(max-width:799px){
+    .pd-page{padding-bottom:90px}
+    .pd-valor{font-size:34px}
+    .buy-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#0B0B0B;border-top:1px solid var(--line);padding:10px 14px;gap:12px;align-items:center;justify-content:space-between}
+    .buy-bar div{min-width:0}
+    .buy-bar small{display:block;color:var(--muted);font-size:12px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .buy-bar strong{color:var(--gold);font-size:20px}
+    .buy-bar .btn{margin:0;padding:12px 16px;font-size:15px;white-space:nowrap}
+  }
 </style>
 </head>
 <body>
@@ -464,7 +501,7 @@ function vitrine(){
     <input class="search" placeholder="Buscar produto..." value="${busca}" oninput="busca=this.value;vitrine()">
     <div class="filters">${chips}</div>
     ${hero}
-    <h2 class="vit-t">Produtos disponíveis <span>${lista.length} itens</span></h2><div class="grid">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
+    <h2 class="vit-t">Produtos disponíveis</h2><div class="grid">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
   const inp = document.querySelector(".search");
   if (busca && inp){ inp.focus(); inp.setSelectionRange(busca.length, busca.length); }
 }
@@ -510,25 +547,42 @@ function detalhe(id){
     : `<div class="ph" style="aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--panel2);border-radius:10px">Foto em breve</div>`;
 
   const rel = relacionados(p);
+  const d = pct(p);
+  const compraBtn = ok
+    ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora no WhatsApp</a>`
+    : `<span class="btn off">Esgotado</span>`;
   document.getElementById("app").innerHTML = `
-    <span class="back" onclick="ir('')">← Voltar</span>
-    <div class="detail">
-      <div class="gal">${galeria}</div>
-      <div>
-        <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
-        ${destaqueTag(p)}
-        <h1>${p.nome}</h1>
-        ${precoHTML(p, true)}
-        <p class="desc">${p.desc}</p>
-        <div class="guar">${GARANTIA}</div>
-        <div class="acts">
-          ${ok ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora no WhatsApp</a>`
-               : `<span class="btn off">Esgotado</span>`}
-          <a class="btn ghost" href="${waLink(duvida(p))}" target="_blank" rel="noopener">Tirar dúvida</a>
+    <div class="pd-page">
+      <a class="back" onclick="ir('')">← Voltar para a vitrine</a>
+      <div class="pd">
+        <div class="pd-gal">${galeria}</div>
+        <div class="pd-info">
+          <div class="pd-tags">
+            <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
+            ${destaqueTag(p)}
+          </div>
+          <h1>${p.nome}</h1>
+          ${d ? `<div class="pd-preco"><s>${money(p.antigo)}</s><span class="pd-pct">-${d}%</span></div>` : ""}
+          <div class="pd-valor">${money(p.preco)}</div>
+          <ul class="pd-ben">
+            <li>Você testa na hora</li>
+            <li>Paga na entrega</li>
+            <li>Entrega em Teresina e Timon</li>
+          </ul>
+          ${p.desc ? `<p class="desc">${p.desc}</p>` : ""}
+          <div class="guar">${GARANTIA}</div>
+          <div class="acts">
+            ${compraBtn}
+            <a class="btn ghost" href="${waLink(duvida(p))}" target="_blank" rel="noopener">Tirar dúvida</a>
+          </div>
         </div>
       </div>
+      ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(x => cardHTML(x)).join("")}</div>` : ""}
     </div>
-    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(p => cardHTML(p)).join("")}</div>` : ""}`;
+    ${ok ? `<div class="buy-bar">
+      <div><small>${p.nome}</small><strong>${money(p.preco)}</strong></div>
+      <a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora</a>
+    </div>` : ""}`;
 
   const mw = document.getElementById("main-wrap");
   if (mw && gFotos.length > 1) swipe(mw, dir => mostrarFoto(gIdx + dir));
