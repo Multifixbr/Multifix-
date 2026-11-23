@@ -139,9 +139,10 @@
   /* página do produto (layout novo) */
   .back{display:inline-block;margin:2px 0 14px;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
   .pd-page{padding-bottom:4px}
-  .pd{display:grid;gap:22px}
-  .pd-gal{min-width:0}
-  .pd-gal img.main{border-radius:14px}
+  .pd{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+  .pd-gal{min-width:0;max-width:100%;overflow:hidden}
+  .pd-gal img.main,.pd-gal .main-wrap,.pd-gal .gal img{width:100%;max-width:100%;height:auto}
+  .pd-gal img.main{border-radius:14px;aspect-ratio:1/1;height:auto;object-fit:cover}
   .pd-info{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
   .pd-tags{display:flex;gap:6px;flex-wrap:wrap}
   .pd-info h1{font-size:24px;line-height:1.25;margin:2px 0 0}
@@ -158,7 +159,7 @@
   .pd-info .acts .btn.ghost{padding:14px;font-size:15px}
   .buy-bar{display:none}
   @media(min-width:800px){
-    .pd{grid-template-columns:1.05fr 1fr;align-items:start;gap:28px}
+    .pd{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start;gap:28px}
     .pd-gal{position:sticky;top:96px}
     .pd-info{padding:26px}
     .pd-info h1{font-size:30px}
