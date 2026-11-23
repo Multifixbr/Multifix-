@@ -38,17 +38,35 @@
   .filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}
   .chip{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:20px;padding:7px 14px;font-family:var(--font);font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
   .chip.on{background:var(--gold);color:#121212;border-color:var(--gold);font-weight:700}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:14px}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-  .card .img{aspect-ratio:1/1;background:var(--panel2);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}
-  .card .img img{width:100%;height:100%;object-fit:cover}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+  .card{background:#181818;border:1px solid #2a2a2a;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+  @media(hover:hover){.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 28px rgba(0,0,0,.5)}}
+  .card .img{aspect-ratio:1/1;background:#0f0f0f;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}
+  .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  @media(hover:hover){.card:hover .img img{transform:scale(1.05)}}
+  .c-chips{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;z-index:2;pointer-events:none}
+  .c-pct{background:#E11D48;color:#fff;font-weight:800;font-size:12px;padding:3px 7px;border-radius:6px}
+  .c-oferta{background:var(--gold);color:#121212;font-weight:800;font-size:10px;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:6px}
+  .c-oferta.ultimas{background:#FF4D4D;color:#fff}
+  .c-oferta.black{background:#000;color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+  .c-oferta.novidade{background:#fff;color:#121212}
+  .c-oferta.promo{background:#fff;color:#121212}
+  .c-ok{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.78);color:#4ADE80;font-weight:700;font-size:11px;padding:4px 9px;border-radius:20px;z-index:2;pointer-events:none}
+  .c-ok.no{color:#FF7A7A}
   .card .img iframe{width:100%;height:100%;border:0;background:#000}
   .gal iframe.main{width:100%;aspect-ratio:1/1;border:0;background:#000;border-radius:10px}
   .thumbs .thumb-vid{display:flex;align-items:center;justify-content:center;width:64px;height:64px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;font-size:12px;color:var(--gold);cursor:pointer;flex:0 0 auto}
   .ph{color:var(--muted);font-size:13px;text-align:center;padding:10px}
-  .card .info{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}
-  .card .name{font-weight:600;font-size:15px;line-height:1.35;cursor:pointer;color:var(--text);margin-bottom:6px;min-height:40px}
+  .card .info{padding:12px 13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .card .name{font-weight:600;font-size:14px;line-height:1.35;cursor:pointer;color:var(--text);min-height:38px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .c-precos{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .c-precos s{color:var(--muted);font-size:13px}
+  .c-precos .price{font-size:22px;font-weight:800;color:var(--gold);margin:0}
+  .c-trust{font-size:11px;color:var(--muted);line-height:1.3}
+  .card .btn{margin-top:auto;padding:12px;font-size:14px;border-radius:10px}
+  .vit-t{font-size:16px;font-weight:700;margin:4px 0 12px;display:flex;justify-content:space-between;align-items:baseline}
+  .vit-t span{font-size:13px;color:var(--muted);font-weight:500}
   .preco-linha{display:flex;align-items:center;gap:8px;min-height:20px;margin-top:6px}
   .old{color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:500}
   .pct{color:var(--red);font-weight:800;font-size:15px}
@@ -77,19 +95,6 @@
   .card.feat .price{font-size:30px}
   @media(max-width:640px){.card.feat{flex-direction:column}.card.feat .img{flex:none;min-height:0;aspect-ratio:1/1}}
 
-  /* layout C: lista */
-  .grid.lista{grid-template-columns:1fr;max-width:760px;margin:0 auto;gap:12px}
-  @media(min-width:800px){.grid.lista{grid-template-columns:1fr}}
-  .card.linha{flex-direction:row}
-  .card.linha .img{flex:0 0 104px;width:104px;height:104px;aspect-ratio:auto}
-  .card.linha .info{padding:10px 12px;min-width:0}
-  .card.linha .linha-top{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-  .card.linha .name{min-height:0;font-size:15px;margin-bottom:2px}
-  .card.linha .price{font-size:19px;margin:0 0 8px}
-  .card.linha .btn{padding:10px}
-  .card.linha .tag{margin-bottom:4px}
-  .card.linha .ribbon{display:none}
-  .layout-teste{max-width:1100px;margin:14px auto 0;text-align:center;font-size:13px;color:var(--muted)}
   .layout-teste a{color:var(--gold);font-weight:700;margin:0 4px}
 
   /* detalhe */
@@ -181,7 +186,7 @@
       </ol>
     </div>
   </div>
-  <p class="layout-teste">Layout de teste: <a href="?layout=a">A</a> <a href="?layout=b">B</a> <a href="?layout=c">C</a></p>
+  <p class="layout-teste">Teste: <a href="./">normal</a> <a href="?layout=b">Black Friday</a></p>
   <p class="loc">Estamos localizados na Zona Sudeste de Teresina.</p>
 </footer>
 
@@ -387,35 +392,25 @@ function novBadge(p){
   return p.oferta ? `<span class="ribbon ${p.oferta}">${curto[p.oferta]}</span>` : "";
 }
 
-// Layout de teste: ?layout=a (grade), b (destaque de oferta), c (lista)
-const LAYOUT = (["a","b","c"].includes(new URLSearchParams(location.search).get("layout")) ? new URLSearchParams(location.search).get("layout") : "a");
+// Teste 2: normal (padrão) ou ?layout=b (com destaque de Black Friday)
+const LAYOUT = new URLSearchParams(location.search).get("layout") === "b" ? "b" : "a";
 
+const TEXTO_CURTO = {novidade:"Novidade", ultimas:"Últimas", promo:"Promoção", black:"Black Friday"};
 function cardHTML(p, feat){
   const ok = p.status === "Disponível";
   const img = p.fotos.length
     ? midia(p.fotos[0], p.nome)
     : `<div class="ph">Foto em breve</div>`;
-  if (LAYOUT === "c"){
-    return `
-  <div class="card linha">
-    <div class="img" onclick="ir(${p.id})">${img}</div>
-    <div class="info">
-      <div class="linha-top"><span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>${destaqueTag(p)}</div>
-      <div class="name" onclick="ir(${p.id})">${p.nome}</div>
-      ${precoHTML(p, false)}
-      ${ok
-        ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener" onclick="registrarClique(${p.id})">Comprar</a>`
-        : `<span class="btn off">Esgotado</span>`}
-    </div>
-  </div>`;
-  }
+  const d = pct(p);
+  const chips = (d ? `<span class="c-pct">-${d}%</span>` : "")
+    + (p.oferta ? `<span class="c-oferta ${p.oferta}">${TEXTO_CURTO[p.oferta]}</span>` : "");
   return `
   <div class="card${feat ? " feat" : ""}">
-    <div class="img" onclick="ir(${p.id})">${img}${novBadge(p)}</div>
+    <div class="img" onclick="ir(${p.id})">${img}<div class="c-chips">${chips}</div><span class="c-ok ${ok ? "" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span></div>
     <div class="info">
-      <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
       <div class="name" onclick="ir(${p.id})">${p.nome}</div>
-      ${precoHTML(p, false)}
+      <div class="c-precos">${p.antigo ? `<s>${money(p.antigo)}</s>` : ""}<strong class="price">${money(p.preco)}</strong></div>
+      <div class="c-trust">Você testa na hora · paga na entrega</div>
       ${ok
         ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener" onclick="registrarClique(${p.id})">Comprar agora</a>`
         : `<span class="btn off">Esgotado</span>`}
@@ -469,7 +464,7 @@ function vitrine(){
     <input class="search" placeholder="Buscar produto..." value="${busca}" oninput="busca=this.value;vitrine()">
     <div class="filters">${chips}</div>
     ${hero}
-    <div class="grid${LAYOUT === "c" ? " lista" : ""}">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
+    <h2 class="vit-t">Produtos disponíveis <span>${lista.length} itens</span></h2><div class="grid">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
   const inp = document.querySelector(".search");
   if (busca && inp){ inp.focus(); inp.setSelectionRange(busca.length, busca.length); }
 }
@@ -533,7 +528,7 @@ function detalhe(id){
         </div>
       </div>
     </div>
-    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid${LAYOUT === "c" ? " lista" : ""}">${rel.map(p => cardHTML(p)).join("")}</div>` : ""}`;
+    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(p => cardHTML(p)).join("")}</div>` : ""}`;
 
   const mw = document.getElementById("main-wrap");
   if (mw && gFotos.length > 1) swipe(mw, dir => mostrarFoto(gIdx + dir));
