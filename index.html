@@ -174,7 +174,6 @@ const WA = "5586998164120";
 
 // Link CSV da planilha publicada no Google Sheets.
 // Enquanto estiver vazio, o site usa a lista interna abaixo.
-const PLANILHA_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBXHf6rVaYji8vmz3yhv--h35dd0fKuSw0oIFn8yLQM8mhFFaYOnk0Rniqcu9qONY7WuqPn7i3HGV7/pub?gid=1909977994&single=true&output=csv";
 
 // ===== LISTA INTERNA (usada se a planilha não estiver conectada) =====
 // status: "Disponível" | "Esgotado" | "Oculto"
@@ -262,7 +261,7 @@ function hashId(texto){
 }
 
 // Lê o arquivo publicado pelo Multifix Business (oficial/produtos.json).
-// Se o arquivo ainda não existir (404 ou rede), devolve false e a planilha assume.
+// Se o arquivo ainda não existir (404 ou rede), devolve false e a lista interna continua.
 async function carregarProdutosJSON(){
   try{
     const r = await fetch("oficial/produtos.json?v=" + Date.now(), {cache:"no-store"});
@@ -290,40 +289,6 @@ async function carregarProdutosJSON(){
   }catch(e){
     console.warn("oficial/produtos.json não carregado, usando planilha.", e);
     return false;
-  }
-}
-
-async function carregarPlanilha(){
-  if (!PLANILHA_CSV) return;
-  try{
-    const r = await fetch(PLANILHA_CSV, {cache:"no-store"});
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const rows = parseCSV(await r.text());
-    const head = rows[0].map(norm);
-    const lista = rows.slice(1).filter(x => x.some(c => c.trim())).map((x, i) => {
-      const o = {}; head.forEach((h, j) => o[h] = (x[j] || "").trim());
-      const preco = parsePreco(o["preco"]);
-      if (!o["nome"] || isNaN(preco)) return null;
-      return {
-        id: parseInt(o["id"]) || (i + 1),
-        nome: o["nome"],
-        cat: o["categoria"] || "Utilidades",
-        preco,
-        antigo: parsePreco(o["preco antigo"]) || null,
-        status: o["status"] || "Disponível",
-        estoque: parseInt(o["estoque"]) || null,
-        oferta: normOferta(o["oferta"]),
-        ...(() => {
-          // até 5 fotos; a legenda de cada foto continua junto dela
-          const pares = [1,2,3,4,5].map(n => [o["foto " + n], o["legenda foto " + n] || ""]).filter(([f]) => f);
-          return { fotos: pares.map(([f]) => linkFoto(f)), legendas: pares.map(([, l]) => l) };
-        })(),
-        desc: o["descricao"] || ""
-      };
-    }).filter(Boolean);
-    if (lista.length) PRODUTOS = lista;
-  }catch(e){
-    console.warn("Planilha não carregada, usando lista interna.", e);
   }
 }
 
@@ -560,8 +525,7 @@ window.addEventListener("hashchange", rota);
 
 async function iniciar(){
   document.getElementById("app").innerHTML = '<div class="empty">Carregando produtos...</div>';
-  const veio = await carregarProdutosJSON();
-  if (!veio) await carregarPlanilha();
+  await carregarProdutosJSON();
   setWa();
   rota();
 }
