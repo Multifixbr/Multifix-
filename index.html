@@ -22,7 +22,7 @@
     --font:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{background:var(--bg)}
+  html{background:var(--bg);-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{font-family:var(--font);background:var(--bg);color:var(--text);padding-bottom:52px;min-height:100vh}
   header{background:#0B0B0B;padding:12px 16px;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
   @media(max-width:420px){header{padding:10px 12px}}
@@ -38,34 +38,64 @@
   .filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px}
   .chip{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:20px;padding:7px 14px;font-family:var(--font);font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap}
   .chip.on{background:var(--gold);color:#121212;border-color:var(--gold);font-weight:700}
-  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:14px}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-  .card .img{aspect-ratio:1/1;background:var(--panel2);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden}
-  .card .img img{width:100%;height:100%;object-fit:cover}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+  .card{background:#181818;border:1px solid #2a2a2a;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+  @media(hover:hover){.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 28px rgba(0,0,0,.5)}}
+  .card .img{aspect-ratio:1/1;background:#0f0f0f;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}
+  .card .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  @media(hover:hover){.card:hover .img img{transform:scale(1.05)}}
+  .c-chips{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;z-index:2;pointer-events:none}
+  .c-pct{background:#E11D48;color:#fff;font-weight:800;font-size:12px;padding:3px 7px;border-radius:6px}
+  .c-oferta{background:var(--gold);color:#121212;font-weight:800;font-size:10px;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:6px}
+  .c-oferta.ultimas{background:#FF4D4D;color:#fff}
+  .c-oferta.black{background:#000;color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+  .c-oferta.novidade{background:#fff;color:#121212}
+  .c-oferta.promo{background:#fff;color:#121212}
+  .c-ok{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.78);color:#4ADE80;font-weight:700;font-size:11px;padding:4px 9px;border-radius:20px;z-index:2;pointer-events:none}
+  .c-ok.no{color:#FF7A7A}
   .card .img iframe{width:100%;height:100%;border:0;background:#000}
   .gal iframe.main{width:100%;aspect-ratio:1/1;border:0;background:#000;border-radius:10px}
   .thumbs .thumb-vid{display:flex;align-items:center;justify-content:center;width:64px;height:64px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;font-size:12px;color:var(--gold);cursor:pointer;flex:0 0 auto}
   .ph{color:var(--muted);font-size:13px;text-align:center;padding:10px}
-  .card .info{padding:10px 12px 12px;display:flex;flex-direction:column;flex:1}
-  .card .name{font-weight:600;font-size:15px;line-height:1.35;cursor:pointer;color:var(--text);margin-bottom:6px}
+  .card .info{padding:12px 13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .card .name{font-weight:600;font-size:14px;line-height:1.35;cursor:pointer;color:var(--text);min-height:38px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .c-precos{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .c-precos s{color:var(--muted);font-size:13px}
+  .c-precos .price{font-size:22px;font-weight:800;color:var(--gold);margin:0}
+  .c-trust{font-size:11px;color:var(--muted);line-height:1.3}
+  .card .btn{margin-top:auto;padding:12px;font-size:14px;border-radius:10px}
+  .vit-t{font-size:16px;font-weight:700;margin:4px 0 12px;display:flex;justify-content:space-between;align-items:baseline}
+  .vit-t span{font-size:13px;color:var(--muted);font-weight:500}
   .preco-linha{display:flex;align-items:center;gap:8px;min-height:20px;margin-top:6px}
   .old{color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:500}
-  .pct{color:var(--red);font-weight:800;font-size:14px}
-  .price{font-size:20px;font-weight:800;color:var(--gold);margin:2px 0 10px}
-  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:14px;padding:10px;border-radius:8px;background:var(--gold);color:#121212;margin-top:auto}
+  .pct{color:var(--red);font-weight:800;font-size:15px}
+  .price{font-size:22px;font-weight:800;color:var(--gold);margin:2px 0 10px}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:12px;border-radius:8px;background:var(--gold);color:#121212;margin-top:auto}
   .btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--gold)}
   .btn.off{background:#2e2e2e;color:#777;pointer-events:none}
   .tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:6px}
-  .tag.ok{background:rgba(37,211,102,.15);color:#4ADE80}
+  .tag.ok{background:rgba(37,211,102,.15);color:#4ADE80;font-size:13px}
   .tag.no{background:rgba(255,90,90,.15);color:#FF7A7A}
   .tag.nov{background:var(--gold);color:#121212}
-  .card .img{position:relative}
-  .ribbon{position:absolute;top:20px;right:-40px;width:150px;transform:rotate(45deg);text-align:center;font-size:8px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;padding:2px 0;background:#FF4D4D;color:#fff;z-index:1;pointer-events:none}
+  .ribbon{position:absolute;top:20px;right:-42px;width:160px;transform:rotate(45deg);text-align:center;font-size:9px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;padding:2px 0;background:#FF4D4D;color:#fff;z-index:1;pointer-events:none}
   .ribbon.promo{background:#fff;color:#121212}
   .ribbon.black{background:#121212;color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
   .empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
+
+  /* layout B: destaque de oferta */
+  .hero-b{background:linear-gradient(120deg,#000 0%,#1c1500 60%,#3a2c00 100%);border:1px solid #3a2c00;border-radius:12px;padding:20px;margin-bottom:12px}
+  .hero-b small{color:var(--gold);font-weight:800;letter-spacing:1px;font-size:12px}
+  .hero-b h2{font-size:22px;margin:4px 0 4px}
+  .hero-b p{font-size:14px;color:#d8d8d8;line-height:1.5}
+  .card.feat{grid-column:1/-1;flex-direction:row}
+  .card.feat .img{flex:0 0 50%;aspect-ratio:auto;min-height:280px}
+  .card.feat .info{padding:22px;justify-content:center}
+  .card.feat .name{font-size:22px;min-height:0}
+  .card.feat .price{font-size:30px}
+  @media(max-width:640px){.card.feat{flex-direction:column}.card.feat .img{flex:none;min-height:0;aspect-ratio:1/1}}
+
+  .layout-teste a{color:var(--gold);font-weight:700;margin:0 4px}
 
   /* detalhe */
   .detail{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:20px}
@@ -80,7 +110,7 @@
   .back{display:inline-block;margin-bottom:12px;color:var(--gold);font-size:14px;font-weight:600;cursor:pointer;text-decoration:underline}
   h1{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px}
   .det-price{font-size:30px;font-weight:800;color:var(--gold);margin:6px 0 10px}
-  .desc{margin:14px 0;line-height:1.6;font-size:15px;color:#D6D6D6}
+  .desc{margin:14px 0;line-height:1.6;font-size:15px;color:#D6D6D6;white-space:pre-line}
   .guar{background:var(--panel2);border-left:4px solid var(--gold);padding:10px 12px;border-radius:6px;font-size:14px;margin:14px 0;color:#E6E6E6}
   .acts{display:grid;gap:10px;margin-top:14px}
   .acts .btn{padding:14px;font-size:16px}
@@ -106,6 +136,48 @@
   .pay-item svg{width:32px;height:32px;flex-shrink:0;color:var(--text)}
   .loc{max-width:1100px;margin:22px auto 0;text-align:center;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 
+  /* página do produto (layout novo) */
+  .back{display:inline-block;margin:2px 0 14px;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+  .pd-page{padding-bottom:4px}
+  .pd{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+  .pd-gal{min-width:0;max-width:100%;overflow:hidden}
+  .pd-gal img.main,.pd-gal .main-wrap,.pd-gal .gal img{width:100%;max-width:100%;height:auto}
+  .pd-gal img.main{border-radius:14px;aspect-ratio:1/1;height:auto;object-fit:cover}
+  .pd-info{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+  .pd-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .pd-info h1{font-size:24px;line-height:1.25;margin:2px 0 0}
+  .pd-preco{display:flex;align-items:center;gap:10px}
+  .pd-preco s{color:var(--muted);font-size:15px}
+  .pd-pct{background:#E11D48;color:#fff;font-weight:800;font-size:13px;padding:3px 8px;border-radius:6px}
+  .pd-valor{font-size:38px;font-weight:800;color:var(--gold);line-height:1}
+  .pd-ben{list-style:none;display:grid;gap:6px;padding:12px 14px;background:var(--panel2);border-radius:10px;font-size:14px;font-weight:600}
+  .pd-ben li::before{content:"✓  ";color:#4ADE80;font-weight:800}
+  .pd-info .desc{margin:4px 0 0;font-size:15px}
+  .pd-info .guar{margin:4px 0 0}
+  .pd-info .acts{margin-top:6px;gap:12px}
+  .pd-info .acts .btn{padding:16px;font-size:17px;border-radius:12px}
+  .pd-info .acts .btn.ghost{padding:14px;font-size:15px}
+  .buy-bar{display:none}
+  @media(min-width:800px){
+    .pd{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start;gap:28px}
+    .pd-gal{position:sticky;top:96px}
+    .pd-info{padding:26px}
+    .pd-info h1{font-size:30px}
+  }
+  @media(max-width:799px){
+    .pd-page{padding-bottom:90px}
+    .pd-valor{font-size:34px}
+    .buy-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#0B0B0B;border-top:1px solid var(--line);padding:10px 14px;gap:12px;align-items:center;justify-content:space-between}
+    .buy-bar div{min-width:0}
+    .buy-bar small{display:block;color:var(--muted);font-size:12px;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .buy-bar strong{color:var(--gold);font-size:20px}
+    .buy-bar .btn{margin:0;padding:12px 16px;font-size:15px;white-space:nowrap}
+  }
+
+  /* botão flutuante do WhatsApp */
+  .wa-flut{position:fixed;right:16px;bottom:18px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.45);z-index:30;transition:bottom .2s}
+  .wa-flut svg{width:32px;height:32px;fill:#fff}
+  @media(max-width:799px){body.em-produto .wa-flut{bottom:92px}}
 </style>
 </head>
 <body>
@@ -160,7 +232,9 @@
   <p class="loc">Estamos localizados na Zona Sudeste de Teresina.</p>
 </footer>
 
-
+<a class="wa-flut" id="wa-flut" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.1 4.9A9.9 9.9 0 0 0 12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 19.1 4.9zM12 20.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 7.1 4.8zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/></svg>
+</a>
 <div class="lb" id="lb">
   <button class="lb-x" aria-label="Fechar">×</button>
   <button class="lb-nav lb-prev" aria-label="Foto anterior">‹</button>
@@ -172,30 +246,16 @@
 <script>
 const WA = "5586998164120";
 
-// Link CSV da planilha publicada no Google Sheets.
-// Enquanto estiver vazio, o site usa a lista interna abaixo.
+const CACHE_KEY = "mf_cache_oficial_v1";
 
-// ===== LISTA INTERNA (usada se a planilha não estiver conectada) =====
-// status: "Disponível" | "Esgotado" | "Oculto"
-let PRODUTOS = [
-  {id:1,nome:"Kit de Ferramentas 46 peças",cat:"Ferramentas",preco:60,status:"Disponível",estoque:null,fotos:["fotos/kit46-1.jpg","fotos/kit46-2.jpg"],desc:"Kit com 46 peças: chave catraca reversível, soquetes, extensões, bits e chaves hexagonais. Para reparos automotivos e manutenção em casa ou na oficina."},
-  {id:2,nome:"Carregador de Bateria 12V",cat:"Ferramentas",preco:100,status:"Disponível",estoque:null,fotos:["fotos/carregador-1.jpg","fotos/carregador-2.jpg"],desc:"Carregador inteligente 12V para baterias de carro, moto e utilitários (4Ah a 100Ah). Bivolt, com display digital e proteção contra curto-circuito, polaridade invertida e sobrecarga."},
-  {id:3,nome:"Compressor de Ar Portátil",cat:"Acessórios",preco:90,status:"Disponível",estoque:null,fotos:["fotos/compressor-1.jpg","fotos/compressor-2.jpg"],desc:"Compressor portátil para calibrar pneus de carro, moto, bicicleta e bolas. Calibragem rápida, sem depender de posto."},
-  {id:4,nome:"Parafusadeira 48V + Bateria",cat:"Ferramentas",preco:160,status:"Oculto",estoque:null,fotos:[],desc:"Parafusadeira e furadeira de impacto sem fio 48V, com 2 baterias de lítio, maleta, brocas, bits e soquetes. Para fixações pesadas em alvenaria, metal e madeira."},
-  {id:5,nome:"Parafusadeira Deasoon",cat:"Ferramentas",preco:160,status:"Disponível",estoque:null,fotos:["fotos/parafusadeira-deasoon-1.jpg","fotos/parafusadeira-deasoon-2.jpg","fotos/parafusadeira-deasoon-3.jpg"],desc:"Parafusadeira e furadeira de impacto sem fio 20V, com 2 baterias, carregador, brocas, extensor e maleta de acessórios."},
-  {id:6,nome:"Jogo de Soquetes 12 peças",cat:"Ferramentas",preco:70,status:"Disponível",estoque:null,fotos:["fotos/soquetes-1.jpg"],desc:"Jogo de soquetes e catraca reversível 1/2', com 12 peças em aço cromo-vanádio. Para parafusos e porcas automotivas e industriais."},
-  {id:7,nome:"Maleta de Ferramentas 12 peças",cat:"Ferramentas",preco:60,status:"Disponível",estoque:null,fotos:["fotos/maleta-1.jpg","fotos/maleta-2.jpg","fotos/maleta-3.jpg"],desc:"Maleta com 12 ferramentas para uso doméstico: trena de 2 m, estilete, chave teste de tensão, fita isolante PVC, chaves de fenda e Phillips e alicate."},
-  {id:8,nome:"Caixa de Som Bluetooth 50W",cat:"Eletrônicos",preco:150,status:"Disponível",estoque:null,fotos:["fotos/caixa-som-1.jpg","fotos/caixa-som-2.jpg"],desc:"Caixa de som multimídia Xtrad CS-29, sem fio, com LED RGB, bluetooth, TWS, entrada USB, cartão TF e rádio FM. Potência de 50W."},
-  {id:9,nome:"Carregador Portátil 20000mAh",cat:"Eletrônicos",preco:75,status:"Oculto",estoque:null,fotos:[],desc:"Power bank de 20.000 mAh com visor digital e saídas Type-C, Micro USB e Lightning. Evita ficar sem bateria em viagens e no trabalho."},
-  {id:10,nome:"Controle de PS4 e PC",cat:"Eletrônicos",preco:100,status:"Disponível",estoque:null,fotos:["fotos/controle-ps4-1.jpg","fotos/controle-ps4-2.jpg"],desc:"Controle sem fio no estilo DualShock 4, compatível com PS4 e PC."},
-  {id:11,nome:"Rádio MP3 First Som",cat:"Eletrônicos",preco:100,status:"Disponível",estoque:null,fotos:["fotos/radio-mp3-1.jpg","fotos/radio-mp3-2.jpg","fotos/radio-mp3-3.jpg"],desc:"Rádio MP3 automotivo 1 Din com bluetooth, USB, leitor de cartão SD e rádio FM. Atende chamadas com viva-voz e toca músicas sem fio."},
-  {id:12,nome:"Cartão Rastreador UGREEN",cat:"Eletrônicos",preco:70,status:"Oculto",estoque:null,fotos:[],desc:"Cartão rastreador UGREEN."},
-  {id:13,nome:"Fone de ouvido para capacete V10",cat:"Acessórios",preco:75,status:"Disponível",estoque:null,fotos:["fotos/fone-capacete-1.jpg","fotos/fone-capacete-2.jpg"],desc:"Fone bluetooth para capacete de moto, com bluetooth 5.3, até 30h de chamadas e alcance de 20m. Compatível com Android e iOS."},
-  {id:14,nome:"Relógio com GPS + Strava + Alexa",cat:"Acessórios",preco:260,status:"Oculto",estoque:null,fotos:[],desc:"Relógio com GPS, integração com Strava e Alexa."},
-  {id:15,nome:"Relógio Masculino",cat:"Acessórios",preco:140,status:"Disponível",estoque:null,fotos:["fotos/relogio-1.jpg","fotos/relogio-2.jpg"],desc:"Relógio masculino elegante, à prova d'água (30m) e com calendário. Estilo executivo para ocasiões sociais e reuniões."},
-  {id:16,nome:"Chaleira Inox",cat:"Utilidades",preco:70,status:"Disponível",estoque:null,fotos:["fotos/chaleira-1.jpg","fotos/chaleira-2.jpg"],desc:"Chaleira elétrica em inox de 1,8 litro, com desligamento automático de segurança e indicador luminoso."},
-  {id:17,nome:"Torneira de Parede",cat:"Utilidades",preco:40,status:"Disponível",estoque:null,fotos:["fotos/torneira-1.jpg","fotos/torneira-2.jpg"],desc:"Torneira de parede flexível com duplo jato (concentrado e chuveirinho). Alcança cantos difíceis da cuba e ajuda a economizar água."}
-];
+// Os produtos vêm sempre de oficial/produtos.json (ou do último carregamento neste aparelho).
+let PRODUTOS = [];
+
+try {
+  const salvo = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+  if (Array.isArray(salvo) && salvo.length) PRODUTOS = salvo;
+} catch(e){}
+
 const CATS = ["Todos","Ferramentas","Acessórios","Eletrônicos","Utilidades"];
 const GARANTIA = "Garantia de 7 dias. Se tiver qualquer problema, fale com a gente pelo WhatsApp.";
 // ======================================================================
@@ -212,7 +272,7 @@ let catAtual = "Todos", busca = "";
 let gFotos = [], gIdx = 0, gLeg = [];
 
 // ---------- planilha ----------
-const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").trim();
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
 
 function parsePreco(v){
   if (v == null) return NaN;
@@ -241,9 +301,7 @@ function parseCSV(text){
 }
 
 function linkFoto(f){
-  // vídeo do Drive (link de visualização) fica como está
   if (/drive\.google\.com\/file\/d\/[\w-]+\/preview/.test(f)) return f;
-  // aceita: nome do arquivo na pasta fotos, link direto, ou link de compartilhamento do Google Drive
   const drive = f.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=view&)?id=|thumbnail\?id=)([\w-]+)/);
   if (drive) return "https://lh3.googleusercontent.com/d/" + drive[1] + "=w1200";
   return f.startsWith("http") ? f : "fotos/" + f;
@@ -261,7 +319,7 @@ function hashId(texto){
 }
 
 // Lê o arquivo publicado pelo Multifix Business (oficial/produtos.json).
-// Se o arquivo ainda não existir (404 ou rede), devolve false e a lista interna continua.
+// Se o arquivo não existir (404 ou rede), devolve false e a vitrine fica vazia.
 async function carregarProdutosJSON(){
   try{
     const r = await fetch("oficial/produtos.json?v=" + Date.now(), {cache:"no-store"});
@@ -285,16 +343,17 @@ async function carregarProdutosJSON(){
       };
     }).filter(p => p.nome && p.preco > 0);
     PRODUTOS = lista;
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify(lista)); } catch(e){}
     return true;
   }catch(e){
-    console.warn("oficial/produtos.json não carregado, usando planilha.", e);
+    console.warn("oficial/produtos.json não carregado.", e);
     return false;
   }
 }
 
-// ---------- vitrine ----------
 function setWa(){
   document.getElementById("wa-top").href = waLink(TOP);
+  document.getElementById("wa-flut").href = waLink(TOP);
 }
 
 function precoHTML(p, grande){
@@ -320,18 +379,25 @@ function novBadge(p){
   return p.oferta ? `<span class="ribbon ${p.oferta}">${curto[p.oferta]}</span>` : "";
 }
 
-function cardHTML(p){
+// Teste 2: normal (padrão) ou ?layout=b (com destaque de Black Friday)
+const LAYOUT = new URLSearchParams(location.search).get("layout") === "b" ? "b" : "a";
+
+const TEXTO_CURTO = {novidade:"Novidade", ultimas:"Últimas", promo:"Promoção", black:"Black Friday"};
+function cardHTML(p, feat){
   const ok = p.status === "Disponível";
   const img = p.fotos.length
     ? midia(p.fotos[0], p.nome)
     : `<div class="ph">Foto em breve</div>`;
+  const d = pct(p);
+  const chips = (d ? `<span class="c-pct">-${d}%</span>` : "")
+    + (p.oferta ? `<span class="c-oferta ${p.oferta}">${TEXTO_CURTO[p.oferta]}</span>` : "");
   return `
-  <div class="card">
-    <div class="img" onclick="ir(${p.id})">${img}${novBadge(p)}</div>
+  <div class="card${feat ? " feat" : ""}">
+    <div class="img" onclick="ir(${p.id})">${img}<div class="c-chips">${chips}</div><span class="c-ok ${ok ? "" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span></div>
     <div class="info">
-      <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
       <div class="name" onclick="ir(${p.id})">${p.nome}</div>
-      ${precoHTML(p, false)}
+      <div class="c-precos">${p.antigo ? `<s>${money(p.antigo)}</s>` : ""}<strong class="price">${money(p.preco)}</strong></div>
+      <div class="c-trust">Você testa na hora · paga na entrega</div>
       ${ok
         ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener" onclick="registrarClique(${p.id})">Comprar agora</a>`
         : `<span class="btn off">Esgotado</span>`}
@@ -339,9 +405,6 @@ function cardHTML(p){
   </div>`;
 }
 
-// ----- ordem da vitrine: muda a cada visita, mas quem navega por um assunto vê mais dele -----
-// Cada produto aberto ou comprado soma 3 pontos; cada categoria aberta soma 1 ponto.
-// Na hora de montar a vitrine entra um sorteio, então a ordem nunca fica igual de uma visita para outra.
 let ordemVisita = null;
 
 function lerContagem(chave){
@@ -356,7 +419,7 @@ function registrarClique(id){
     localStorage.setItem("mf_cliques", JSON.stringify(prods));
     localStorage.setItem("mf_cats", JSON.stringify(cats));
   } catch(e){}
-  ordemVisita = null; // a próxima vitrine já considera este clique
+  ordemVisita = null;
 }
 function ordenar(lista){
   if (!ordemVisita){
@@ -366,24 +429,31 @@ function ordenar(lista){
       ordemVisita[p.id] = (prods[p.id] || 0) * 3 + (cats[p.cat] || 0) + Math.random() * 2;
     });
   }
-  // Novidades ficam sempre no topo; o resto segue a ordem de interesse
-  const nov = p => (p.oferta === "novidade" ? 1 : 0);
+  // Novidade fica no topo só para quem ainda não clicou em nada neste aparelho
+  const semHistorico = Object.keys(lerContagem("mf_cliques")).length === 0;
+  const nov = p => (semHistorico && p.oferta === "novidade" ? 1 : 0);
   return lista.slice().sort((a, b) => (nov(b) - nov(a)) || ((ordemVisita[b.id] || 0) - (ordemVisita[a.id] || 0)));
 }
 
 function vitrine(){
+  const q = norm(busca);
   const lista = ordenar(visiveis().filter(p =>
     (catAtual === "Todos" || p.cat === catAtual) &&
-    p.nome.toLowerCase().includes(busca.toLowerCase())
+    (!q || norm(p.nome).includes(q) || norm(p.desc || "").includes(q))
   ));
   const chips = CATS.map(c =>
     `<button class="chip ${c === catAtual ? "on" : ""}" onclick="filtrar('${c}')">${c}</button>`).join("");
+  const destaque = LAYOUT === "b" && catAtual === "Todos" && !q && lista.length;
+  const hero = destaque ? `
+    <div class="hero-b"><small>BLACK FRIDAY</small><h2>Ofertas de pronta entrega</h2><p>Preço especial enquanto durar a promoção. Garanta o seu.</p></div>` : "";
+  const cards = lista.map((p, i) => cardHTML(p, destaque && i === 0)).join("");
   document.getElementById("app").innerHTML = `
     <input class="search" placeholder="Buscar produto..." value="${busca}" oninput="busca=this.value;vitrine()">
     <div class="filters">${chips}</div>
-    <div class="grid">${lista.length ? lista.map(cardHTML).join("") : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
+    ${hero}
+    <h2 class="vit-t">Produtos disponíveis</h2><div class="grid">${lista.length ? cards : '<div class="empty">Nenhum produto encontrado.</div>'}</div>`;
   const inp = document.querySelector(".search");
-  if (busca){ inp.focus(); inp.setSelectionRange(busca.length, busca.length); }
+  if (busca && inp){ inp.focus(); inp.setSelectionRange(busca.length, busca.length); }
 }
 
 function filtrar(c){ catAtual = c; vitrine(); }
@@ -414,7 +484,7 @@ function detalhe(id){
   gFotos = p.fotos.slice(); gIdx = 0; gLeg = (p.legendas || []).slice();
 
   const galeria = gFotos.length
-    ? `<div class="main-wrap">
+    ? `<div class="main-wrap" id="main-wrap">
          ${midia(gFotos[0], p.nome, "main", "main", "abrirFoto()")}
          ${gFotos.length > 1 ? `
            <button class="gnav prev" aria-label="Foto anterior" onclick="event.stopPropagation();mostrarFoto(gIdx-1)">‹</button>
@@ -427,32 +497,50 @@ function detalhe(id){
     : `<div class="ph" style="aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--panel2);border-radius:10px">Foto em breve</div>`;
 
   const rel = relacionados(p);
+  const d = pct(p);
+  const compraBtn = ok
+    ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora no WhatsApp</a>`
+    : `<span class="btn off">Esgotado</span>`;
   document.getElementById("app").innerHTML = `
-    <span class="back" onclick="ir('')">← Voltar</span>
-    <div class="detail">
-      <div class="gal">${galeria}</div>
-      <div>
-        <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
-        ${destaqueTag(p)}
-        <h1>${p.nome}</h1>
-        ${precoHTML(p, true)}
-        <p class="desc">${p.desc}</p>
-        <div class="guar">${GARANTIA}</div>
-        <div class="acts">
-          ${ok ? `<a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora no WhatsApp</a>`
-               : `<span class="btn off">Esgotado</span>`}
-          <a class="btn ghost" href="${waLink(duvida(p))}" target="_blank" rel="noopener">Tirar dúvida</a>
+    <div class="pd-page">
+      <a class="back" onclick="ir('')">← Voltar para a vitrine</a>
+      <div class="pd">
+        <div class="pd-gal">${galeria}</div>
+        <div class="pd-info">
+          <div class="pd-tags">
+            <span class="tag ${ok ? "ok" : "no"}">${ok ? "Pronta entrega" : "Esgotado"}</span>
+            ${destaqueTag(p)}
+          </div>
+          <h1>${p.nome}</h1>
+          ${d ? `<div class="pd-preco"><s>${money(p.antigo)}</s><span class="pd-pct">-${d}%</span></div>` : ""}
+          <div class="pd-valor">${money(p.preco)}</div>
+          <ul class="pd-ben">
+            <li>Você testa na hora</li>
+            <li>Paga na entrega</li>
+            <li>Entrega em Teresina e Timon</li>
+          </ul>
+          ${p.desc ? `<p class="desc">${p.desc}</p>` : ""}
+          <div class="guar">${GARANTIA}</div>
+          <div class="acts">
+            ${compraBtn}
+            <a class="btn ghost" href="${waLink(duvida(p))}" target="_blank" rel="noopener">Tirar dúvida</a>
+            <a class="btn ghost" href="https://wa.me/?text=${encodeURIComponent(p.nome + " - " + money(p.preco) + "\n" + location.href)}" target="_blank" rel="noopener">Compartilhar no WhatsApp</a>
+          </div>
         </div>
       </div>
+      ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(x => cardHTML(x)).join("")}</div>` : ""}
     </div>
-    ${rel.length ? `<h2 class="rel">Você também pode gostar</h2><div class="grid">${rel.map(cardHTML).join("")}</div>` : ""}`;
+    ${ok ? `<div class="buy-bar">
+      <div><small>${p.nome}</small><strong>${money(p.preco)}</strong></div>
+      <a class="btn" href="${waLink(compra(p))}" target="_blank" rel="noopener">Comprar agora</a>
+    </div>` : ""}`;
 
-  const m = document.getElementById("main");
-  if (m && gFotos.length > 1) swipe(m, dir => mostrarFoto(gIdx + dir));
+  const mw = document.getElementById("main-wrap");
+  if (mw && gFotos.length > 1) swipe(mw, dir => mostrarFoto(gIdx + dir));
   window.scrollTo(0, 0);
 }
 
-// deslizar o dedo para o lado (celular)
+// deslizar o dedo para o lado (telemóvel/celular)
 function swipe(el, onSwipe){
   let x0 = null;
   el.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, {passive:true});
@@ -475,7 +563,7 @@ function lbDraw(){
   lb.querySelectorAll(".lb-nav").forEach(b => b.style.display = gFotos.length > 1 ? "" : "none");
 }
 function abrirFoto(){
-  if (ehVideo(gFotos[gIdx])) return; // vídeo não abre em tela cheia
+  if (ehVideo(gFotos[gIdx])) return;
   if (!gFotos.length) return;
   lbOn = true; lb.classList.add("open"); lbDraw();
   document.body.style.overflow = "hidden";
@@ -517,6 +605,7 @@ function rota(){
   ordemVisita = null;
   const tb = document.getElementById("topo-banner");
   if (tb) tb.style.display = location.hash.startsWith("#produto=") ? "none" : "block";
+  document.body.classList.toggle("em-produto", location.hash.startsWith("#produto="));
   const h = location.hash.replace("#", "");
   if (h.startsWith("produto=")) detalhe(parseInt(h.split("=")[1]));
   else vitrine();
@@ -524,10 +613,10 @@ function rota(){
 window.addEventListener("hashchange", rota);
 
 async function iniciar(){
-  document.getElementById("app").innerHTML = '<div class="empty">Carregando produtos...</div>';
-  await carregarProdutosJSON();
   setWa();
   rota();
+  const atualizou = await carregarProdutosJSON();
+  if (atualizou && !busca) rota();
 }
 iniciar();
 </script>
