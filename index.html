@@ -255,6 +255,44 @@ function midia(src, alt, cls, id, clique){
   return `<img src="${src}" alt="${alt || ""}" ${id ? `id="${id}"` : ""} class="${cls || ""}" ${clique ? `onclick="${clique}"` : ""}>`;
 }
 
+function hashId(texto){
+  let h = 7;
+  for (const c of String(texto)) h = (h * 31 + c.charCodeAt(0)) % 2147483647;
+  return h || 1;
+}
+
+// Lê o arquivo publicado pelo Multifix Business (oficial/produtos.json).
+// Se o arquivo ainda não existir (404 ou rede), devolve false e a planilha assume.
+async function carregarProdutosJSON(){
+  try{
+    const r = await fetch("oficial/produtos.json?v=" + Date.now(), {cache:"no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const dados = await r.json();
+    if (!Array.isArray(dados.produtos)) return false;
+    const lista = dados.produtos.map(p => {
+      const fotos = (p.fotos || []).filter(f => f && f.url);
+      return {
+        id: hashId(p.id),
+        nome: p.nome,
+        cat: p.categoria || "Utilidades",
+        preco: Number(p.preco) || 0,
+        antigo: Number(p.preco_antigo) || null,
+        status: p.status === "esgotado" ? "Esgotado" : "Disponível",
+        estoque: null,
+        oferta: p.oferta || "",
+        fotos: fotos.map(f => f.url),
+        legendas: fotos.map(f => f.legenda || ""),
+        desc: p.descricao || ""
+      };
+    }).filter(p => p.nome && p.preco > 0);
+    PRODUTOS = lista;
+    return true;
+  }catch(e){
+    console.warn("oficial/produtos.json não carregado, usando planilha.", e);
+    return false;
+  }
+}
+
 async function carregarPlanilha(){
   if (!PLANILHA_CSV) return;
   try{
@@ -522,7 +560,8 @@ window.addEventListener("hashchange", rota);
 
 async function iniciar(){
   document.getElementById("app").innerHTML = '<div class="empty">Carregando produtos...</div>';
-  await carregarPlanilha();
+  const veio = await carregarProdutosJSON();
+  if (!veio) await carregarPlanilha();
   setWa();
   rota();
 }
