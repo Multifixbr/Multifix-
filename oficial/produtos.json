@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-24T10:58:53-03:00",
+  "gerado_em": "2026-11-24T19:49:14-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -193,10 +193,10 @@
       "categoria": "Acessórios",
       "marca": "",
       "descricao": "02 Panelas\n02 Caçarolas\n02 Frigideiras Fundas\n01 Fervedor\n03 Acessórios em Nylon\n\nDESCRIÇÃO DAS PEÇAS:\n\nPanela – 2 L\nDiâmetro: 18 cm | Altura: 7 cm\nPanela – 1,5 L\nDiâmetro: 16 cm | Altura: 7 cm\nCaçarola – 2,7 L\nDiâmetro: 20 cm | Altura: 8 cm\n\nCaçarola – 2 L\nDiâmetro: 18 cm | Altura: 8 cm\nFrigideira Funda – 1,6 L\nDiâmetro: 20 cm | Altura: 6 cm\nFrigideira Funda – 1,4 L\nDiâmetro: 18 cm | Altura: 6 cm\nFervedor – 2 L\nDiâmetro: 14 cm | Altura: 12 cm\nAcessórios 03 unidades",
-      "oferta": "ultimas",
+      "oferta": "",
       "preco": 260.0,
       "preco_antigo": null,
-      "status": "disponivel",
+      "status": "esgotado",
       "fotos": [
         {
           "tipo": "imagem",
