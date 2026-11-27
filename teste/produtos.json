@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-26T23:47:37-03:00",
+  "gerado_em": "2026-11-26T23:54:42-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -76,6 +76,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135108-f07d44e2a5.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-c03533c61f66",
+      "nome": "CHAVE DE IMPACTO 580 NM",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Chave de Impacto Sem Fio Rhovixstar 68VF  entrega força bruta de 580 N.m com encaixe quadrado reforçado de 1/2\" com pino de travamento, soltando porcas e parafusos de rodas de carros, motos e estruturas travadas em segundos.\n-\n✅ Ferramenta 2 em 1 (Impacto + Furadeira/Parafusadeira)\n✅ Painel Digital e Iluminação LED Integrada  \n✅ Maleta Completa Pronta para Uso: Inclui soquetes longos de impacto para rodas, pontas bits (Phillips/Fenda), pino de trava, anel de vedação e fonte bivolt",
+      "oferta": "",
+      "preco": 245.0,
+      "preco_antigo": null,
+      "status": "disponivel",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-216c75a1a8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-3edd6ec9fb.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-5ec99c3f0e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-bb10fc7ec2.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-cf81697ba6.jpg",
           "legenda": ""
         }
       ]
