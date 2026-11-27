@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-25T11:04:30-03:00",
+  "gerado_em": "2026-11-26T23:47:37-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -183,7 +183,7 @@
       "categoria": "Ferramentas",
       "marca": "",
       "descricao": "O que vem no estojo (300 peças separadas por medida):\n\nParafusos 3,5 x 12 mm: 50 unidades\nParafusos 3,5 x 16 mm: 40 unidades\nParafusos 3,5 x 20 mm: 30 unidades\nParafusos 3,5 x 25 mm: 20 unidades\nParafusos 3,5 x 35 mm: 20 unidades\nParafusos 4,0 x 40 mm: 20 unidades\nParafusos 4,0 x 50 mm: 20 unidades\nBuchas de Parede 06 mm: 80 unidades\nBuchas de Parede 08 mm: 20 unidades",
-      "oferta": "",
+      "oferta": "ultimas",
       "preco": 40.0,
       "preco_antigo": null,
       "status": "disponivel",
