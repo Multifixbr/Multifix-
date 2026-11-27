@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-26T23:54:42-03:00",
+  "gerado_em": "2026-11-26T23:55:37-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -89,7 +89,7 @@
       "oferta": "",
       "preco": 245.0,
       "preco_antigo": null,
-      "status": "disponivel",
+      "status": "esgotado",
       "fotos": [
         {
           "tipo": "imagem",
