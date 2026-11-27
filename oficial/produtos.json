@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-11-25T11:04:03-03:00",
+  "gerado_em": "2026-11-27T00:07:58-03:00",
   "produtos": [
     {
       "id": "p-67e7ad20d8e1",
@@ -76,6 +76,44 @@
         {
           "tipo": "imagem",
           "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135108-f07d44e2a5.jpg",
+          "legenda": ""
+        }
+      ]
+    },
+    {
+      "id": "p-c03533c61f66",
+      "nome": "CHAVE DE IMPACTO 580 NM",
+      "categoria": "Ferramentas",
+      "marca": "",
+      "descricao": "Chave de Impacto Sem Fio Rhovixstar 68VF  entrega força bruta de 580 N.m com encaixe quadrado reforçado de 1/2\" com pino de travamento, soltando porcas e parafusos de rodas de carros, motos e estruturas travadas em segundos.\n-\n✅ Ferramenta 2 em 1 (Impacto + Furadeira/Parafusadeira)\n✅ Painel Digital e Iluminação LED Integrada  \n✅ Maleta Completa Pronta para Uso: Inclui soquetes longos de impacto para rodas, pontas bits (Phillips/Fenda), pino de trava, anel de vedação e fonte bivolt",
+      "oferta": "",
+      "preco": 245.0,
+      "preco_antigo": null,
+      "status": "esgotado",
+      "fotos": [
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-216c75a1a8.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-3edd6ec9fb.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-5ec99c3f0e.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-bb10fc7ec2.jpg",
+          "legenda": ""
+        },
+        {
+          "tipo": "imagem",
+          "url": "https://multifixbr.github.io/Multifix-/teste/fotos/foto-20261122135313-cf81697ba6.jpg",
           "legenda": ""
         }
       ]
@@ -183,7 +221,7 @@
       "categoria": "Ferramentas",
       "marca": "",
       "descricao": "O que vem no estojo (300 peças separadas por medida):\n\nParafusos 3,5 x 12 mm: 50 unidades\nParafusos 3,5 x 16 mm: 40 unidades\nParafusos 3,5 x 20 mm: 30 unidades\nParafusos 3,5 x 25 mm: 20 unidades\nParafusos 3,5 x 35 mm: 20 unidades\nParafusos 4,0 x 40 mm: 20 unidades\nParafusos 4,0 x 50 mm: 20 unidades\nBuchas de Parede 06 mm: 80 unidades\nBuchas de Parede 08 mm: 20 unidades",
-      "oferta": "",
+      "oferta": "ultimas",
       "preco": 40.0,
       "preco_antigo": null,
       "status": "disponivel",
